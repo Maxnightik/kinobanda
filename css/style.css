@@ -1,14 +1,16 @@
 body {
-  margin: 10px 0;
   background: #1a1a1d;
   font-family: "Montserrat", sans-serif;
 }
 
+header {
+  height: 100px;
+  margin: 10px 0px;
+}
 .container {
   width: 1168px;
   height: 100%;
   margin: 0 auto;
-  position: relative;
 }
 
 .logo img {
@@ -24,45 +26,53 @@ body {
 
 /* MAIN*/
 
-.category {
+.movie {
   margin-top: 10px;
-  height: 92px;
+  width: 1168px;
+  height: 550px;
   background: #0d0d0d;
   border: 1px solid #950740;
   border-radius: 11px;
 }
 
-.categorie-title {
-  padding-left: 5px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  color: #c3073f;
-}
-
-.title {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  color: #c3073f;
-}
-
-.movie li {
+.movie img {
+  width: 200px;
+  height: 286px;
+  padding-left: 20px;
+  padding-right: 20px;
   float: left;
-  margin-right: 10px;
-  list-style: none;
 }
 
-.movies {
-  margin-bottom: 210px;
+.movie-title {
+  padding-left: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  color: #c3073f;
+}
+
+.genre {
+  font-size: 28px;
+  color: #b3970b;
+}
+
+.description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: #5a5a5a;
+  padding-left: 10px;
 }
 
 /* FOOTER */
 
+footer {
+  margin-top: 10px;
+}
 .footer-container {
   width: 1168px;
   height: 201px;
