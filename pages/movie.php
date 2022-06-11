@@ -9,19 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
     <!-- HEADER -->
-    <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="logo"><img src="image/logo.png" alt="logo" /></div>
-                <div class="search"><img src="image/search.svg" alt="search" /></div>
-            </div>
-        </div>
-    </header>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
 
     <!-- END HEADER -->
 
@@ -31,24 +24,10 @@
             <div class="movies">
                 <div class="movie">
                     <h2 class="movie-title">
-                        Обі-Ван Кенобі / Obi-Wan Kenobi (2022)
+                        <a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
+                            Obi-Wan Kenobi (2022)</a>
                     </h2>
-                    <img src="image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre">Фантастика, Бойовик, пригоди</div>
-                        <p>2022</p>
-                        <p>
-                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
-                            Обі-Вану Кенобі. Події розгорнуться через десять років після
-                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
-                            немовля Люка Скайуокера на Татуїн.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="movie">
-                    <h2 class="movie-title">Обі-Ван Кенобі / Obi-Wan Kenobi (2022)</h2>
-                    <img src="image/poster.jpg" alt="постер" />
+                    <img src="../image/poster.jpg" alt="постер" />
                     <div class="description">
                         <div class="genre">Фантастика, Бойовик, пригоди</div>
                         <p>
@@ -61,8 +40,24 @@
                 </div>
 
                 <div class="movie">
-                    <h2 class="movie-title">Обі-Ван Кенобі / Obi-Wan Kenobi (2022)</h2>
-                    <img src="image/poster.jpg" alt="постер" />
+                    <h2 class="movie-title"><a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
+                            Obi-Wan Kenobi (2022)</a></h2>
+                    <img src="..//image/poster.jpg" alt="постер" />
+                    <div class="description">
+                        <div class="genre">Фантастика, Бойовик, пригоди</div>
+                        <p>
+                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
+                            Обі-Вану Кенобі. Події розгорнуться через десять років після
+                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
+                            немовля Люка Скайуокера на Татуїн.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <h2 class="movie-title"><a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
+                            Obi-Wan Kenobi (2022)</a></h2>
+                    <img src="../image/poster.jpg" alt="постер" />
                     <div class="description">
                         <div class="genre">Фантастика, Бойовик, пригоди</div>
                         <p>
@@ -76,9 +71,10 @@
 
                 <div class="movie">
                     <h2 class="movie-title">
-                        Обі-Ван Кенобі / Obi-Wan Kenobi (2022)
+                        <a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
+                            Obi-Wan Kenobi (2022)</a>
                     </h2>
-                    <img src="image/poster.jpg" alt="постер" />
+                    <img src="../image/poster.jpg" alt="постер" />
                     <div class="description">
                         <div class="genre">Фантастика, Бойовик, пригоди</div>
                         <p>
@@ -99,7 +95,7 @@
     <footer>
         <div class="footer-container">
             <div class="logo">
-                <img src="image/logo.png" alt="logo" />
+                <img src="../image/logo.png" alt="logo" />
             </div>
         </div>
     </footer>
