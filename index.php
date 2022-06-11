@@ -41,9 +41,6 @@
                 <div class="filter-category__item">
                     Сімейний
                 </div>
-                <div class="filter-category__item">
-                    Військовий
-                </div>
             </div>
             <button type="submit" class="filter-btn">Знайти</button>
         </form>
