@@ -21,15 +21,33 @@
             <form action="register.php" method="POST">
                 <div class="reg">
 
+
+                    <label for="nickname">Введіть свій email</label>
+                    </br>
+                    <input type="text" name="nickname" placeholder="Введіть свій email">
+                    </br>
+
                     <label for="email">Введіть свій email</label>
                     </br>
                     <input type="email" name="email" placeholder="Введіть свій email">
                     </br>
+
+                    <label for="userName">Введіть свій email</label>
+                    </br>
+                    <input type="text" name="nickname" placeholder="Введіть свій email">
+                    </br>
+
+                    <label for="surname">Введіть свій email</label>
+                    </br>
+                    <input type="text" name="nickname" placeholder="Введіть свій email">
+                    </br>
+
                     </br>
 
                     <label for="password">Введіть свій пароль</label>
                     </br>
                     <input type="password" name="password" placeholder="Введіть свій пароль">
+
                     <button type="submit" class="filter-btn">Зареєструватись</button>
             </form>
         </div>

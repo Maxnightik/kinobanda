@@ -39,9 +39,11 @@ header {
   box-sizing: border-box;
   width: 479px;
   height: 497px;
-  background: linear-gradient(109.46deg,
-      rgba(201, 201, 201, 0.5) 1.57%,
-      rgba(196, 196, 196, 0.1) 100%);
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.5) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
   backdrop-filter: blur(60px);
   border-radius: 27px;
   padding: 1.25em;
@@ -76,13 +78,13 @@ header {
   margin: 10px 0 0 7px;
 }
 
-.filter-radio+label {
+.filter-radio + label {
   position: relative;
   padding: 0 10px 0 25px;
   cursor: pointer;
 }
 
-.filter-radio+label:before {
+.filter-radio + label:before {
   content: "";
   position: absolute;
   top: -3px;
@@ -94,7 +96,7 @@ header {
   background: #fff;
 }
 
-.filter-radio+label:after {
+.filter-radio + label:after {
   content: "";
   position: absolute;
   top: 1px;
@@ -108,11 +110,11 @@ header {
   transition: 0.2s;
 }
 
-.filter-radio:checked+label:after {
+.filter-radio:checked + label:after {
   opacity: 1;
 }
 
-.filter-radio:focus+label:before {
+.filter-radio:focus + label:before {
   box-shadow: 0 0 0 3px rgba(255, 19, 19, 0.885);
 }
 
@@ -132,9 +134,11 @@ header {
 .filter-data input,
 .reg input {
   padding: 10px 12px;
-  background: linear-gradient(109.46deg,
-      rgba(201, 201, 201, 0.8) 1.57%,
-      rgba(196, 196, 196, 0.1) 100%);
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.8) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
   opacity: 0.5;
   backdrop-filter: blur(60px);
   border-radius: 7px;
@@ -162,7 +166,7 @@ header {
 }
 
 .filter-category__item {
-  border: 2px solid #C3073F;
+  border: 2px solid #c3073f;
   border-radius: 20px;
   padding: 5px 20px;
   display: inline-block;
@@ -179,7 +183,7 @@ header {
 
 .filter-category__item.selected {
   border: 2px solid #5fc307;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .filter-btn {
@@ -227,6 +231,15 @@ header {
   font-size: 30px;
   line-height: 39px;
   color: #c3073f;
+  text-decoration: none;
+}
+
+.movie-title a {
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #fff;
 }
 
 .genre {
@@ -292,6 +305,32 @@ header {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
+}
+
+.trailer:hover {
+  background: #ffffff;
+  color: #c3073f;
+  cursor: pointer;
+}
+
+/* COMMENT*/
+.comment-btn {
+  width: 131px;
+  height: 49px;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.comment-btn:hover {
+  background: #ffffff;
+  color: #c3073f;
+  cursor: pointer;
 }
 
 /* FOOTER */
