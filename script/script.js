@@ -6,10 +6,11 @@ $('.filter-category__item').on('click', function () {
     $(this).toggleClass('selected');
 });
 
-
+//send form
 $('.filter-btn').on('click', function (event) {
     event.preventDefault();
     let categories = [];
+
     $('.filter-category__item').each(function () {
         if ($(this).hasClass('selected')) {
             categories.push($(this).attr('data-category'));
@@ -17,6 +18,7 @@ $('.filter-btn').on('click', function (event) {
     });
 
     let data = $("#filter-form").serializeArray();
+
     if (categories.length > 0) {
         data.push({ 'categories': categories });
     }

@@ -73,7 +73,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="movie">
                         <h2 class="movie-title">
-                            <a href="infomovie.php" target="_blank"> <?php echo $movie['movieName']; ?>
+                            <a href="<?php echo $siteName . "pages/infomovie.php?id=" . $movie['movieId'] ?>" target="_blank"> <?php echo $movie['movieName']; ?>
                                 (<?php echo $movie['year']; ?>) </a>
                         </h2>
                         <img src="<?php echo $site_url . $movie['movieImg']; ?>" alt="постер" />
