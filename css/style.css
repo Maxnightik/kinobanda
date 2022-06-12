@@ -205,7 +205,7 @@ header {
 .movie {
   margin-top: 10px;
   width: 1168px;
-  height: 430px;
+  min-height: 430px;
   background: #0d0d0d;
   border: 1px solid #950740;
   border-radius: 11px;
@@ -237,14 +237,19 @@ header {
 .year {
   color: #b3970b;
 }
+
 .description {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 44px;
   color: #5a5a5a;
   padding-left: 10px;
+}
+
+.description p {
+  padding: 0 10px;
 }
 
 .info-movies {
@@ -268,9 +273,11 @@ header {
   margin: 0;
   padding: 0;
 }
+
 .screen {
   margin-bottom: 40px;
 }
+
 .screen ul {
   display: flex;
   justify-content: space-evenly;
@@ -292,6 +299,31 @@ header {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* COMMENT*/
+
+.comment {
+  text-align: left;
+}
+
+.comment-btn {
+  width: 131px;
+  height: 49px;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.comment-btn:hover {
+  background: #ffffff;
+  color: #c3073f;
+  cursor: pointer;
 }
 
 /* FOOTER */
