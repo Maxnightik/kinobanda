@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
     $filter = $_POST['filter'];
@@ -62,30 +62,39 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $connect->query($sql);
             $count_movie = mysqli_num_rows($result);
             $n = 0;
-            while ($n < $count_movie) {
-                $movie = mysqli_fetch_assoc($result);
-                $sqlCat = "SELECT * FROM category WHERE categoryId = " . $movie['categoryId'];
-                $resultCat = $connect->query($sqlCat);
-                $category = mysqli_fetch_assoc($resultCat);
+            if ($count_movie > 0) {
+                while ($n < $count_movie) {
+                    $movie = mysqli_fetch_assoc($result);
+                    $sqlCat = "SELECT * FROM category WHERE categoryId = " . $movie['categoryId'];
+                    $resultCat = $connect->query($sqlCat);
+                    $category = mysqli_fetch_assoc($resultCat);
+
+
             ?>
 
-                <div class="movie">
-                    <h2 class="movie-title">
-                        <?php echo $movie['movieName']; ?>
-                        (2022)
-                    </h2>
-                    <img src="image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre"><?php echo $category['categoryName']; ?></div>
-                        <p>2022</p>
-                        <p>
-                            <?php echo $movie['description']; ?>
-                        </p>
+                    <div class="movie">
+                        <h2 class="movie-title">
+                            <?php echo $movie['movieName']; ?>
+                            (<?php echo $movie['year']; ?>)
+                        </h2>
+                        <img src="<?php echo $site_url . $movie['movieImg']; ?>" alt="постер" />
+                        <div class="description">
+                            <div class="genre"><?php echo $category['categoryName']; ?></div>
+                            <p>
+                                <?php echo $movie['description']; ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
 
+                <?php
+                    $n++;
+                }
+            } else {
+                ?>
+                <h2 class="error">На жаль фільм не знайдено, спробуйте знову</h2>
+                <a href="/">Повернутись назад</a>
             <?php
-                $n++;
+
             }
             ?>
 

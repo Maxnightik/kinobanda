@@ -1,3 +1,6 @@
+//mark the first element
+$('.filter-radio').eq(0).prop('checked', true);
+
 //select/remove category
 $('.filter-category__item').on('click', function () {
     $(this).toggleClass('selected');
@@ -19,23 +22,15 @@ $('.filter-btn').on('click', function (event) {
     }
 
     let page_link = window.location.origin;
-    //let url = page_link + '/pages/movie.php';
-    //console.log(url);
-    //window.location.replace(url);
+
     if (data.length > 0) {
         $.ajax({
             url: page_link + '/pages/movie.php',
             type: 'POST',
             data: { filter: data },
-            success: function (data, status, xhr) {
+            success: function (data) {
                 $('body').html(data);
-                console.log($('html'));
-                // $(location).attr('href', url);
             }
         })
-        //$("#filter-form").submit();
     }
-
-    console.log(categories);
-    console.log(data);
 })
