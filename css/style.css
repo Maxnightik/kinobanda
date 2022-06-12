@@ -314,6 +314,11 @@ header {
 }
 
 /* COMMENT*/
+
+.comment {
+  text-align: left;
+}
+
 .comment-btn {
   width: 131px;
   height: 49px;

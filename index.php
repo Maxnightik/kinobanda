@@ -1,4 +1,8 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+<?php 
+	include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+//	include $_SERVER['DOCUMENT_ROOT'] . "/include/loginProcess.php";
+?>
+
 <main class="main-filter">
     <div class="filter-top">
         <img src="/image/filter/popcorn1.svg" alt="" class="filter-img">

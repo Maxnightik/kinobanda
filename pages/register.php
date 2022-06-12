@@ -22,9 +22,9 @@
                 <div class="reg">
 
 
-                    <label for="nickname">Введіть свій email</label>
+                    <label for="nickname">Введіть своє ім'я</label>
                     </br>
-                    <input type="text" name="nickname" placeholder="Введіть свій email">
+                    <input type="text" name="nickname" placeholder="Введіть своє ім'я">
                     </br>
 
                     <label for="email">Введіть свій email</label>
@@ -32,16 +32,14 @@
                     <input type="email" name="email" placeholder="Введіть свій email">
                     </br>
 
-                    <label for="userName">Введіть свій email</label>
+                    <label for="userName">Введіть свій логiн</label>
                     </br>
-                    <input type="text" name="nickname" placeholder="Введіть свій email">
-                    </br>
-
-                    <label for="surname">Введіть свій email</label>
-                    </br>
-                    <input type="text" name="nickname" placeholder="Введіть свій email">
+                    <input type="text" name="userName" placeholder="Введіть свій логiн">
                     </br>
 
+                    <label for="surname">Введіть своє призвище</label>
+                    </br>
+                    <input type="text" name="surname" placeholder="Введіть своє призвище">
                     </br>
 
                     <label for="password">Введіть свій пароль</label>
