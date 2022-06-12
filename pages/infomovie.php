@@ -43,6 +43,44 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                         <a class="trailer" href="<?php echo $movie['trailer'] ?>" target="_blank">Дивитись
                             трейлер</a>
                     </div>
+                    <div class="comment">
+
+                        <form name="comment" action="comment.php" method="post">
+                            <h3>Залишити коментар</h3>
+
+                            <p>
+                                <textarea name="text_comment" cols="70" rows="20"></textarea>
+                            </p>
+                            <p>
+                                <button type="submit" class="comment-btn">Вiдправити</button>
+                            </p>
+                        </form>
+                        <div class="comments">
+                            <div class="name">Max</div>
+                            <div class="text_comment">
+                                <p>Классний фiльм!</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name">Max</div>
+                            <div class="text_comment">
+                                <p>Классний фiльм!</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name">Max</div>
+                            <div class="text_comment">
+                                <p>Классний фiльм!</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name">Max</div>
+                            <div class="text_comment">
+                                <p>Классний фiльм!</p>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
