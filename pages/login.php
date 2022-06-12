@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; 
+if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
+?>
+
 
 <main class="main-filter">
     <div class="filter-top">
@@ -10,18 +13,13 @@
     <div class="filter-bottom" id="login-area">
         <form action="<?php $documentRoot ?>/include/loginProcess.php" id="login-form" method="POST">
             <div class="filter-data">
-                <input type="text" id="emailAuth" placeholder="Адрес электронной почты" autocomplete="email">
-                <input type="password" id="passAuth" placeholder="Пароль">
+                <input type="text" name="emailAuth" placeholder="Адрес электронной почты">
+                <input type="password" name="passAuth" placeholder="Пароль">
             </div>
             <button type="submit" class="filter-btn" id="login-button">Увійти</button>
         </form>
 				<p> 
-					<?php if(isset($_GET['logErr']))
-									{
-										if($_GET['logErr'] == "01") echo("COOKIE ERROR");
-										if($_GET['logErr'] == "02") echo("USER NOT FOUND ERROR");
-										if($_GET['logErr'] == "03") echo("POST ERROR");
-									} ?> 
+				<?php echo($_COOKIE["logError"]); ?>
 				</p>
     </div>
 
