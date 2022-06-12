@@ -1,106 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KinoBanda</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
-</head>
+if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
+    $filter = $_POST['filter'];
+    $str = '';
 
-<body>
-    <!-- HEADER -->
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    for ($i = 0; $i < count($filter); $i++) {
+        $strLenght = strlen($str);
 
-    <!-- END HEADER -->
+        if ($filter[$i]['name'] == 'type' && $filter[$i]['value'] != '') {
+            if ($strLenght > 0) {
+                $str .= " && ";
+            }
+            $str .= "characterId = " . $filter[$i]['value'];
+        }
 
-    <!-- MAIN -->
-    <main>
-        <div class="container">
-            <div class="movies">
-                <div class="movie">
-                    <h2 class="movie-title">
-                        <a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
-                            Obi-Wan Kenobi (2022)</a>
-                    </h2>
-                    <img src="../image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre">Фантастика, Бойовик, пригоди</div>
-                        <p>
-                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
-                            Обі-Вану Кенобі. Події розгорнуться через десять років після
-                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
-                            немовля Люка Скайуокера на Татуїн.
-                        </p>
+        if ($filter[$i]['name'] == 'year-from' && $filter[$i]['value'] != '') {
+            if ($strLenght > 0) {
+                $str .= " && ";
+            }
+            $str .= "year >= " . $filter[$i]['value'];
+        }
+
+        if ($filter[$i]['name'] == 'year-to' && $filter[$i]['value'] != '') {
+            if ($strLenght > 0) {
+                $str .= " && ";
+            }
+            $str .= "year <= " . $filter[$i]['value'];
+        }
+
+        if ($filter[$i]['categories']) {
+
+            for ($j = 0; $j < count($filter[$i]['categories']); $j++) {
+                if (count($filter[$i]['categories']) > 1) {
+                    if ($j == 0) {
+                        $str .= " && categoryId = " . $filter[$i]['categories'][$j];
+                    } else {
+                        $str .= " || categoryId = " . $filter[$i]['categories'][$j];
+                    }
+                } else {
+                    if ($strLenght > 0) {
+                        $str .= " && ";
+                    }
+
+                    $str .= " categoryId = " . $filter[$i]['categories'][$j];
+                }
+            }
+        }
+    }
+}
+?>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+?>
+<!-- MAIN -->
+<main>
+    <div class="container">
+        <div class="movies">
+
+            <?php
+            $sql = "SELECT * FROM movies WHERE " . $str;
+            $result = $connect->query($sql);
+            $count_movie = mysqli_num_rows($result);
+            $n = 0;
+            if ($count_movie > 0) {
+                while ($n < $count_movie) {
+                    $movie = mysqli_fetch_assoc($result);
+                    $sqlCat = "SELECT * FROM category WHERE categoryId = " . $movie['categoryId'];
+                    $resultCat = $connect->query($sqlCat);
+                    $category = mysqli_fetch_assoc($resultCat);
+            ?>
+
+                    <div class="movie">
+                        <h2 class="movie-title">
+                            <a href="infomovie.php" target="_blank"> <?php echo $movie['movieName']; ?>
+                                (<?php echo $movie['year']; ?>) </a>
+                        </h2>
+                        <img src="<?php echo $site_url . $movie['movieImg']; ?>" alt="постер" />
+                        <div class="description">
+                            <div class="genre"><?php echo $category['categoryName']; ?></div>
+                            <p>
+                                <?php echo $movie['description']; ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="movie">
-                    <h2 class="movie-title"><a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
-                            Obi-Wan Kenobi (2022)</a></h2>
-                    <img src="..//image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre">Фантастика, Бойовик, пригоди</div>
-                        <p>
-                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
-                            Обі-Вану Кенобі. Події розгорнуться через десять років після
-                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
-                            немовля Люка Скайуокера на Татуїн.
-                        </p>
-                    </div>
-                </div>
+                <?php
+                    $n++;
+                }
+            } else {
+                ?>
+                <h2 class="error">На жаль фільм не знайдено, спробуйте знову</h2>
+                <a href="/">Повернутись назад</a>
+            <?php
 
-                <div class="movie">
-                    <h2 class="movie-title"><a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
-                            Obi-Wan Kenobi (2022)</a></h2>
-                    <img src="../image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre">Фантастика, Бойовик, пригоди</div>
-                        <p>
-                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
-                            Обі-Вану Кенобі. Події розгорнуться через десять років після
-                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
-                            немовля Люка Скайуокера на Татуїн.
-                        </p>
-                    </div>
-                </div>
+            }
+            ?>
 
-                <div class="movie">
-                    <h2 class="movie-title">
-                        <a href="infomovie.php" target="_blank"> Обі-Ван Кенобі /
-                            Obi-Wan Kenobi (2022)</a>
-                    </h2>
-                    <img src="../image/poster.jpg" alt="постер" />
-                    <div class="description">
-                        <div class="genre">Фантастика, Бойовик, пригоди</div>
-                        <p>
-                            Спін-офф із франшизи «Зоряних війн», присвяченої майстру-джедаю
-                            Обі-Вану Кенобі. Події розгорнуться через десять років після
-                            того, що сталося в «Помсті сітхів», коли Обі-Ван Кенобі доставив
-                            немовля Люка Скайуокера на Татуїн.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <!-- END MAIN -->
+<!-- END MAIN -->
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-container">
-            <div class="logo">
-                <img src="../image/logo.png" alt="logo" />
-            </div>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="logo">
+            <img src="image/logo.png" alt="logo" />
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- END FOOTER -->
-</body>
-
-</html>
+<!-- END FOOTER -->
