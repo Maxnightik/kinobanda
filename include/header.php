@@ -1,5 +1,7 @@
 <?php
-$site_url = 'http://films.local/';
+$documentRoot = "/opt/lampp/htdocs/films";
+$siteName = "http://films.local/";
+
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,8 @@ $site_url = 'http://films.local/';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?php echo $site_url . "css/style.css" ?>">
+    <link rel="stylesheet" href="<?php $documentRoot ?>/css/style.css">
+    <link rel="stylesheet" href="<?php $documentRoot ?>/css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -19,8 +22,8 @@ $site_url = 'http://films.local/';
     <header>
         <div class="header-top">
             <div class="container">
-                <div class="logo"><img src="<?php echo $site_url . "image/logo.png" ?>" alt="logo" /></div>
-                <div class="search"><img src="<?php echo $site_url . "image/search.svg" ?>" alt="search" /></div>
+                <div class="logo"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></div>
+                <div class="search"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
             </div>
         </div>
     </header>

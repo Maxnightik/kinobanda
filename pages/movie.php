@@ -51,7 +51,8 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+?>
 <!-- MAIN -->
 <main>
     <div class="container">
@@ -68,14 +69,12 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
                     $sqlCat = "SELECT * FROM category WHERE categoryId = " . $movie['categoryId'];
                     $resultCat = $connect->query($sqlCat);
                     $category = mysqli_fetch_assoc($resultCat);
-
-
             ?>
 
                     <div class="movie">
                         <h2 class="movie-title">
-                            <?php echo $movie['movieName']; ?>
-                            (<?php echo $movie['year']; ?>)
+                            <a href="infomovie.php" target="_blank"> <?php echo $movie['movieName']; ?>
+                                (<?php echo $movie['year']; ?>) </a>
                         </h2>
                         <img src="<?php echo $site_url . $movie['movieImg']; ?>" alt="постер" />
                         <div class="description">
