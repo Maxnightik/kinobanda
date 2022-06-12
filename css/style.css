@@ -301,6 +301,31 @@ header {
   font-weight: 600;
 }
 
+/* COMMENT*/
+
+.comment {
+  text-align: left;
+}
+
+.comment-btn {
+  width: 131px;
+  height: 49px;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.comment-btn:hover {
+  background: #ffffff;
+  color: #c3073f;
+  cursor: pointer;
+}
+
 /* FOOTER */
 
 footer {
