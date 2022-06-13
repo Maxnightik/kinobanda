@@ -1,3 +1,33 @@
+<?php 
+
+ include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+if(
+isset($_POST["nickname"]) && isset($_POST["email"]) && isset($_POST["userName"]) && isset($_POST["surname"]) &&
+isset($_POST["password"])
+&& $_POST["nickname"] != "" && $_POST["email"] != "" && $_POST["userName"] != "" && $_POST["surname"] != "" &&
+$_POST["password"] !=""
+) {
+
+$sql = "INSERT INTO users (nickname, email, userName, surname, password) VALUES
+('"
+. $_POST["nickname"] . "', '"
+. $_POST["email"] . "', '"
+. $_POST["userName"] . "', '"
+. $_POST["surname"] . "', '"
+. $_POST["password"] . "')";
+
+
+if(mysqli_query($connect,$sql)) {
+echo "<h2>Користувача додано</h2>";
+} else {
+echo "<h2>Помилка</h2>" . mysqli_error($connect);
+}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,30 +50,23 @@
         <div class="filter-bottom">
             <form action="register.php" method="POST">
                 <div class="reg">
-
-
-                    <label for="nickname">Введіть своє ім'я</label>
                     </br>
-                    <input type="text" name="nickname" placeholder="Введіть своє ім'я">
+                    <input type="text" name="nickname" placeholder="Введіть свiй логiн ">
+                    </br>
                     </br>
 
-                    <label for="email">Введіть свій email</label>
-                    </br>
                     <input type="email" name="email" placeholder="Введіть свій email">
                     </br>
-
-                    <label for="userName">Введіть свій логiн</label>
-                    </br>
-                    <input type="text" name="userName" placeholder="Введіть свій логiн">
                     </br>
 
-                    <label for="surname">Введіть своє призвище</label>
+                    <input type="text" name="userName" placeholder="Введіть своє ім'я">
                     </br>
+                    </br>
+
                     <input type="text" name="surname" placeholder="Введіть своє призвище">
                     </br>
-
-                    <label for="password">Введіть свій пароль</label>
                     </br>
+
                     <input type="password" name="password" placeholder="Введіть свій пароль">
 
                     <button type="submit" class="filter-btn">Зареєструватись</button>

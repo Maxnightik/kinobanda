@@ -204,6 +204,10 @@ header {
   cursor: pointer;
 }
 
+.filter-bottom {
+  text-align: center;
+}
+
 /* SEARCH*/
 
 .movie {
