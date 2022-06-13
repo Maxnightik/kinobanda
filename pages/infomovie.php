@@ -6,11 +6,11 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $connect->query($sql);
     $movie = mysqli_fetch_assoc($result);
 
-    $sqlCat = "SELECT * FROM category WHERE categoryId =" . $movie['movieId'];
+    $sqlCat = "SELECT * FROM category WHERE categoryId =" . $movie['categoryId'];
     $resultCat = $connect->query($sqlCat);
     $category = mysqli_fetch_assoc($resultCat);
 
-		setcookie("movie_id", $movie['movieId'], time() + 3600, '/');
+    setcookie("movie_id", $movie['movieId'], time() + 3600, '/');
 }
 
 ?>
@@ -35,6 +35,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                         <ul>
                             <?php
                             $movieFrame = array_diff(scandir($documentRoot . $movie['frame'], 1), array('..', '.'));
+
                             for ($i = 0; $i < count($movieFrame); $i++) {
                             ?>
 
@@ -45,17 +46,17 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             трейлер</a>
                     </div>
 
-<!-- COMMENTS BLOCK  -->
+                    <!-- COMMENTS BLOCK  -->
                     <div class="comment">
 
-<!-- COMMENTS BLOCK FORM  -->
+                        <!-- COMMENTS BLOCK FORM  -->
                         <form name="comment" action="comment.php" method="POST" id="comments">
                             <h3>Залишити коментар</h3>
 
                             <p>
                                 <textarea name="text_comment" cols="70" rows="6" id="comment-area"></textarea>
-																<input name="user_id" type="hidden" value="<?php echo($_COOKIE['user__id']) ?>" id="user-id">
-																<input name="movie_id" type="hidden" value="<?php echo($_GET['id']) ?>" id="movie-id">
+                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
+                                <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
                             </p>
                             <p>
                                 <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
@@ -64,13 +65,13 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 
 
 
-<!-- COMMENTS BLOCK DISPLAY -->
-<div id="comment_list">
+                        <!-- COMMENTS BLOCK DISPLAY -->
+                        <div id="comment_list">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
+                            <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
 
-</div>
-												
+                        </div>
+
 
 
                     </div>
@@ -92,5 +93,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 <!-- END FOOTER -->
 </body>
 
-<script src="<?php echo($siteName) ?>script/script.js"></script>
+<script src="<?php echo ($siteName) ?>script/script.js"></script>
+
 </html>
