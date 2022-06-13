@@ -1,6 +1,6 @@
 <?php 
 
- include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+ include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if(
 isset($_POST["nickname"]) && isset($_POST["email"]) && isset($_POST["userName"]) && isset($_POST["surname"]) &&
@@ -44,7 +44,9 @@ echo "<h2>Помилка</h2>" . mysqli_error($connect);
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     <main class="main-filter">
         <div class="filter-top">
+            <img src="<?php $documentRoot ?>/image/filter/popcorn1.svg" alt="" class="filter-img">
             <h1>Реєстрація користувача</h1>
+            <p>Знайди фільм на свій смак</p>
         </div>
 
         <div class="filter-bottom">

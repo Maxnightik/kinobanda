@@ -9,6 +9,29 @@ header {
   height: 100px;
 }
 
+.sign {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #950740;
+  float: right;
+  padding-top: 20px;
+  padding-left: 5px;
+}
+
+.rega {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #950740;
+  float: right;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .container {
   width: 1170px;
   height: 100%;
@@ -22,10 +45,30 @@ header {
   margin-bottom: 6px;
 }
 
-.search img {
-  float: right;
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 174px;
 }
 
+.search input {
+  padding: 10px 12px;
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.8) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
+  opacity: 0.5;
+  backdrop-filter: blur(60px);
+  border-radius: 7px;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  max-width: 175px;
+  outline: none;
+  text-align: center;
+}
 /*FILTER BLOCK*/
 .main-filter {
   display: flex;
@@ -147,6 +190,10 @@ header {
   font-size: 15px;
   max-width: 175px;
   outline: none;
+}
+
+.reg input::placeholder {
+  color: #fff;
 }
 
 .filter-data input:focus {
