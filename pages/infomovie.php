@@ -9,6 +9,8 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
     $sqlCat = "SELECT * FROM category WHERE categoryId =" . $movie['movieId'];
     $resultCat = $connect->query($sqlCat);
     $category = mysqli_fetch_assoc($resultCat);
+
+		setcookie("movie_id", $movie['movieId'], time() + 3600, '/');
 }
 
 ?>
@@ -32,7 +34,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="screen">
                         <ul>
                             <?php
-
                             $movieFrame = array_diff(scandir($documentRoot . $movie['frame'], 1), array('..', '.'));
                             for ($i = 0; $i < count($movieFrame); $i++) {
                             ?>
@@ -43,42 +44,34 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                         <a class="trailer" href="<?php echo $movie['trailer'] ?>" target="_blank">Дивитись
                             трейлер</a>
                     </div>
+
+<!-- COMMENTS BLOCK  -->
                     <div class="comment">
 
-                        <form name="comment" action="comment.php" method="post">
+<!-- COMMENTS BLOCK FORM  -->
+                        <form name="comment" action="comment.php" method="POST" id="comments">
                             <h3>Залишити коментар</h3>
 
                             <p>
-                                <textarea name="text_comment" cols="70" rows="20"></textarea>
+                                <textarea name="text_comment" cols="70" rows="6" id="comment-area"></textarea>
+																<input name="user_id" type="hidden" value="<?php echo($_COOKIE['user__id']) ?>" id="user-id">
+																<input name="movie_id" type="hidden" value="<?php echo($_GET['id']) ?>" id="movie-id">
                             </p>
                             <p>
-                                <button type="submit" class="comment-btn">Вiдправити</button>
+                                <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
                             </p>
                         </form>
-                        <div class="comments">
-                            <div class="name">Max</div>
-                            <div class="text_comment">
-                                <p>Классний фiльм!</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="name">Max</div>
-                            <div class="text_comment">
-                                <p>Классний фiльм!</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="name">Max</div>
-                            <div class="text_comment">
-                                <p>Классний фiльм!</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="name">Max</div>
-                            <div class="text_comment">
-                                <p>Классний фiльм!</p>
-                            </div>
-                        </div>
+
+
+
+<!-- COMMENTS BLOCK DISPLAY -->
+<div id="comment_list">
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
+
+</div>
+												
+
 
                     </div>
 
@@ -99,4 +92,5 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 <!-- END FOOTER -->
 </body>
 
+<script src="<?php echo($siteName) ?>script/script.js"></script>
 </html>

@@ -307,6 +307,10 @@ header {
   text-align: left;
 }
 
+.comment form textarea {
+	width: 99%;
+}
+
 .comment-btn {
   width: 131px;
   height: 49px;
@@ -317,13 +321,29 @@ header {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 600;
-  margin-top: 20px;
+	margin-left: 88%;
 }
 
 .comment-btn:hover {
   background: #ffffff;
   color: #c3073f;
   cursor: pointer;
+}
+
+.comments {
+	border: #4a4a4a;
+	border-style: solid;
+	border-width: 0.25em;
+	margin-bottom: 0.25em;
+	width: 98%;
+}
+
+.name {
+	margin-left: 1em;
+}
+
+.text_comment {
+	margin-left: 1em;
 }
 
 /* FOOTER */
