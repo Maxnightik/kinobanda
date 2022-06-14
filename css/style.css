@@ -194,7 +194,8 @@ header {
   margin-top: 20px;
 }
 
-.filter-btn:hover {
+.filter-btn:hover,
+.trailer:hover {
   background: #ffffff;
   color: #c3073f;
   cursor: pointer;
@@ -219,23 +220,29 @@ header {
   float: left;
 }
 
-.movie-title {
+.movie-title,
+.movie-title a {
   padding-left: 20px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 39px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.movie-title a:hover {
   color: #c3073f;
 }
 
 .genre {
   font-size: 28px;
-  color: #b3970b;
+  color: #c3073f;
 }
 
 .year {
-  color: #b3970b;
+  color: #c3073f;
 }
 
 .description {
@@ -307,8 +314,44 @@ header {
   text-align: left;
 }
 
+.comment h3 {
+  margin-left: 30px;
+  color: #FFFFFF;
+}
+
 .comment form textarea {
-	width: 99%;
+  width: calc(100% - 70px);
+  padding: 15px;
+  color: #c3073f;
+  margin: 0 20px;
+  line-height: 25px;
+  height: 120px;
+}
+
+.comment form textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+.comment form textarea::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.comment form textarea::-webkit-scrollbar-thumb {
+  background-color: #c3073f;
+  border-radius: 50px;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+      color-stop(.5, rgba(255, 255, 255, .2)),
+      color-stop(.5, transparent), to(transparent));
+}
+
+
+#comment-area:focus {
+  box-shadow: 0 0 15px rgb(255, 19, 19, 1);
+  -webkit-box-shadow: 0 0 15px rgba(255, 19, 19, 1);
+  -moz-box-shadow: 0 0 15px rgba(255, 19, 19, 1);
+  border: 1px solid #ffffff;
 }
 
 .comment-btn {
@@ -321,7 +364,7 @@ header {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 600;
-	margin-left: 88%;
+  margin-left: 87%;
 }
 
 .comment-btn:hover {
@@ -331,19 +374,19 @@ header {
 }
 
 .comments {
-	border: #4a4a4a;
-	border-style: solid;
-	border-width: 0.25em;
-	margin-bottom: 0.25em;
-	width: 98%;
+  border: #4a4a4a;
+  border-style: solid;
+  border-width: 0.25em;
+  margin-bottom: 0.25em;
+  width: 98%;
 }
 
 .name {
-	margin-left: 1em;
+  margin-left: 1em;
 }
 
 .text_comment {
-	margin-left: 1em;
+  margin-left: 1em;
 }
 
 /* FOOTER */
