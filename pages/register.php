@@ -49,9 +49,9 @@ echo "<h2>Помилка</h2>" . mysqli_error($connect);
             <p>Знайди фільм на свій смак</p>
         </div>
 
-        <div class="filter-bottom">
-            <form action="register.php" method="POST">
-                <div class="reg">
+        <div class="filter-bottom" id="register-area">
+            <form action="register.php" id="register-form" method="POST">
+                <div class="filter-data">
                     </br>
                     <input type="text" name="nickname" placeholder="Введіть свiй логiн ">
                     </br>
@@ -71,7 +71,7 @@ echo "<h2>Помилка</h2>" . mysqli_error($connect);
 
                     <input type="password" name="password" placeholder="Введіть свій пароль">
 
-                    <button type="submit" class="filter-btn">Зареєструватись</button>
+                    <button type="submit" class="filter-btn" id="register-button">Зареєструватись</button>
             </form>
         </div>
         </div>
