@@ -16,6 +16,7 @@ $siteName = "http://kinobanda/";
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/style.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/login.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/register.css">
+    <link rel="stylesheet" href="<?php $documentRoot ?>/css/media.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
