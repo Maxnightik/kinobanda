@@ -10,26 +10,31 @@ header {
 }
 
 .sign {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
-  color: #950740;
   float: right;
-  padding-top: 20px;
-  padding-left: 5px;
+  margin-top: 20px;
+  margin-right: 5px;
+  background: #c3073f;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 5px;
 }
 
 .rega {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
-  color: #950740;
   float: right;
-  padding-top: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-top: 20px;
+  margin-right: 5px;
+  background: #c3073f;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 5px;
 }
 
 .container {
@@ -49,11 +54,13 @@ header {
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  padding-left: 174px;
+  padding-left: 192px;
+  cursor: pointer;
 }
 
 .search input {
-  padding: 10px 12px;
+  padding: 10px 10px;
+  margin-right: 6px;
   background: linear-gradient(
     109.46deg,
     rgba(201, 201, 201, 0.8) 1.57%,
@@ -65,9 +72,18 @@ header {
   border: none;
   color: #ffffff;
   font-size: 15px;
-  max-width: 175px;
+  max-width: 187px;
   outline: none;
 }
+
+.search input::placeholder {
+  color: #fff;
+}
+
+.search img {
+  margin-right: 80px;
+}
+
 /*FILTER BLOCK*/
 .main-filter {
   display: flex;
@@ -240,7 +256,9 @@ header {
 }
 
 .filter-btn:hover,
-.trailer:hover {
+.trailer:hover,
+.sign:hover,
+.rega:hover {
   background: #ffffff;
   color: #c3073f;
   cursor: pointer;
@@ -445,22 +463,4 @@ header {
 
 .text_comment {
   margin-left: 1em;
-}
-
-/* FOOTER */
-
-footer {
-  margin-top: 10px;
-}
-
-.footer-container {
-  width: 1168px;
-  height: 201px;
-  margin: 0 auto;
-  background: #0d0d0d;
-  border-radius: 24px;
-}
-
-.footer-container img {
-  padding: 50px 50px;
 }
