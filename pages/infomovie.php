@@ -54,7 +54,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             <h3>Залишити коментар</h3>
 
                             <p>
-                                <textarea name="text_comment" cols="70" rows="6" id="comment-area"></textarea>
+                                <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
                                 <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
                                 <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
                             </p>
