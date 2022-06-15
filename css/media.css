@@ -6,6 +6,19 @@
     .filter-top {
         margin-top: 250px;
     }
+
+    .info-movie {
+        width: auto;
+    }
+
+    .screen .image {
+        width: 150px;
+        height: 120px;
+    }
+
+    .comment-btn {
+        margin-left: 80%;
+    }
 }
 
 @media screen and (max-width: 768px) {
