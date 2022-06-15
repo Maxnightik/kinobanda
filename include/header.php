@@ -1,9 +1,5 @@
-<?php
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
 
-$documentRoot = "C:/xampp2/htdocs/kinobanda";
-$siteName = "http://kinobanda/";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,30 +23,25 @@ $siteName = "http://kinobanda/";
         <div class="header-top">
             <div class="container">
 
-                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png"
-                            alt="logo" /></a>
+                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></a>
                 </div>
 
-                <a class="rega" href="/pages/register.php">Реєстрація</a>
-                <?php 
-              
-                if(isset($_COOKIE["user__id"]) ) {
-                    ?>
-                <a class="sign" href="/include/exit.php">Вийти</a>
+                <div class="search">
+									<input id="search__input" type="text" name="search" placeholder="Шукати">
+									<div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
+								</div>
+                <?php if (isset($_COOKIE['user__id'])) { ?>
+                    <div>
+                        <a class="sign" href="<?php echo $siteName . 'include/exit.php' ?>">Вихід</a>
+                    </div>
 
-                <?php 
-                    } else {
-                ?>
-                <a class="sign" href="/pages/login.php">Увiйти</a>
-                <?php
-                    }
-                    ?>
+                <?php } else { ?>
+                    <div>
+                        <a class="sign" href="/pages/login.php">Увiйти</a>
+                        <a class="rega" href="/pages/register.php">Реєстрація</a>
+                    </div>
 
-
-                <div class="search"><input type="text" name="search" placeholder="Шукати">
-                    <img src="<?php $documentRoot ?>/image/search.svg" alt="search" />
-                </div>
-
+                <?php } ?>
             </div>
         </div>
     </header>

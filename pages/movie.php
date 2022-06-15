@@ -2,12 +2,16 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
-    $filter = $_POST['filter'];
-    $str = '';
+	$str = '';
 
+	if(isset($_POST['search__text']) && $_POST['search__text'] != "") {
+		$str .= "movieName LIKE '%" . $_POST['search__text'] . "%'";
+	}
+
+	if(isset($_POST['filter'])) {
+    $filter = $_POST['filter'];
     for ($i = 0; $i < count($filter); $i++) {
         $strLenght = strlen($str);
-
         if ($filter[$i]['name'] == 'type' && $filter[$i]['value'] != '') {
             if ($strLenght > 0) {
                 $str .= " && ";
@@ -48,6 +52,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
+	}
 }
 ?>
 
@@ -71,28 +76,28 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
                     $category = mysqli_fetch_assoc($resultCat);
             ?>
 
-            <div class="movie">
-                <h2 class="movie-title">
-                    <a href="<?php echo $siteName . "pages/infomovie.php?id=" . $movie['movieId'] ?>" target="_blank">
-                        <?php echo $movie['movieName']; ?>
-                        (<?php echo $movie['year']; ?>) </a>
-                </h2>
-                <img src="<?php echo $siteName . $movie['movieImg']; ?>" alt="постер" />
-                <div class="description">
-                    <div class="genre"><?php echo $category['categoryName']; ?></div>
-                    <p>
-                        <?php echo $movie['description']; ?>
-                    </p>
-                </div>
-            </div>
+                    <div class="movie">
+                        <h2 class="movie-title">
+                            <a href="<?php echo $siteName . "pages/infomovie.php?id=" . $movie['movieId'] ?>" target="_blank">
+                                <?php echo $movie['movieName']; ?>
+                                (<?php echo $movie['year']; ?>) </a>
+                        </h2>
+                        <img src="<?php echo $siteName . $movie['movieImg']; ?>" alt="постер" />
+                        <div class="description">
+                            <div class="genre"><?php echo $category['categoryName']; ?></div>
+                            <p>
+                                <?php echo $movie['description']; ?>
+                            </p>
+                        </div>
+                    </div>
 
-            <?php
+                <?php
                     $n++;
                 }
             } else {
                 ?>
-            <h2 class="error">На жаль фільм не знайдено, спробуйте знову</h2>
-            <a href="/">Повернутись назад</a>
+                <h2 class="error">На жаль фільм не знайдено, спробуйте знову</h2>
+                <a href="/">Повернутись назад</a>
             <?php
 
             }

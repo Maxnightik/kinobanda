@@ -1,5 +1,6 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; 
-if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+if (!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
 ?>
 
 
@@ -13,14 +14,14 @@ if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
     <div class="filter-bottom" id="login-area">
         <form action="<?php $documentRoot ?>/include/loginProcess.php" id="login-form" method="POST">
             <div class="filter-data">
-                <input type="text" name="emailAuth" placeholder="Адрес электронной почты">
-                <input type="password" name="passAuth" placeholder="Пароль">
+                <input type="text" name="emailAuth" placeholder="Введіть свій email">
+                <input type="password" name="passAuth" placeholder="Введіть свій пароль">
             </div>
             <button type="submit" class="filter-btn" id="login-button">Увійти</button>
         </form>
-				<p> 
-				<?php echo($_COOKIE["logError"]); ?>
-				</p>
+        <p>
+            <?php echo ($_COOKIE["logError"]); ?>
+        </p>
     </div>
 
 </main>
