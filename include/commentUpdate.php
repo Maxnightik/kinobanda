@@ -9,13 +9,13 @@ $sqlComm = "SELECT comments.*, users.nickname AS nick FROM comments RIGHT JOIN u
 $resultComm = $connect->query($sqlComm);
 
 														while($row = $resultComm->fetch_assoc()) { ?>
-														<div class="comments">
-															<div class="name"><?php echo($row['nick']); ?></div>
-															<div class="text_comment">
-																	<p><?php echo($row['text']); ?></p>
-															</div>
-															</div>
-															<?php
+<div class="comments">
+    <div class="name"><?php echo($row['nick']); ?></div>
+    <div class="text_comment">
+        <p><?php echo($row['text']); ?></p>
+    </div>
+</div>
+<?php
 														}
 													
 ?>

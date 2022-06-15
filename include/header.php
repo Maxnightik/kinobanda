@@ -1,6 +1,6 @@
 <?php
 
-$documentRoot = "C:/xampp/htdocs/kinobanda";
+$documentRoot = "C:/xampp2/htdocs/kinobanda";
 $siteName = "http://kinobanda/";
 
 ?>
