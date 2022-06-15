@@ -21,9 +21,8 @@
                         $type = mysqli_fetch_assoc($result);
 
                     ?>
-                 <input type="radio" name="type" id="<?php echo "type" . $type['characterId'] ?>" class="filter-radio"
-                     value="<?php echo $type['characterId'] ?>">
-                 <label for="<?php echo "type" . $type['characterId'] ?>"><?php echo $type['characterName'] ?></label>
+                     <input type="radio" name="type" id="<?php echo "type" . $type['characterId'] ?>" class="filter-radio" value="<?php echo $type['characterId'] ?>">
+                     <label for="<?php echo "type" . $type['characterId'] ?>"><?php echo $type['characterName'] ?></label>
 
                  <?php
                         $i++;
@@ -44,8 +43,8 @@
                     while ($j < $count_category) {
                         $category = mysqli_fetch_assoc($result2);
                     ?> <div class="filter-category__item" data-category=" <?php echo $category['categoryId']; ?>">
-                     <?php echo $category['categoryName']; ?>
-                 </div>
+                         <?php echo $category['categoryName']; ?>
+                     </div>
                  <?php
                         $j++;
                     } ?>

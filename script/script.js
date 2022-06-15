@@ -18,6 +18,7 @@ $(".filter-btn").on("click", function (event) {
   });
 
   let data = $("#filter-form").serializeArray();
+  
   console.log(data);
   if (categories.length > 0) {
     data.push({ categories: categories });
@@ -38,7 +39,6 @@ $(".filter-btn").on("click", function (event) {
 });
 
 //send comment form
-
 $("#comment-btn").on("click", function (event) {
   event.preventDefault();
   let page_link = window.location.origin;
