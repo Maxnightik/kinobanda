@@ -33,3 +33,4 @@ if(isset($email) && isset($pass) ) {
 	setcookie("logError", "POST ERROR", time() + 3600, '/');
 	header("Location: " . $siteName . "pages/login.php");
 }
+?>
