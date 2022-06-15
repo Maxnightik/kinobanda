@@ -1,5 +1,6 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; 
-if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+if (!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
 ?>
 
 
@@ -18,9 +19,9 @@ if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
             </div>
             <button type="submit" class="filter-btn" id="login-button">Увійти</button>
         </form>
-				<p> 
-				<?php echo($_COOKIE["logError"]); ?>
-				</p>
+        <p>
+            <?php echo ($_COOKIE["logError"]); ?>
+        </p>
     </div>
 
 </main>
