@@ -35,7 +35,7 @@ $(".filter-btn").on("click", function (event) {
     });
   }
 });
-
+// test com for merge
 //send comment form
 $("#comment-btn").on("click", function (event) {
   event.preventDefault();
@@ -48,15 +48,32 @@ $("#comment-btn").on("click", function (event) {
     $.ajax({
       url: page_link + "/include/commentSend.php",
       method: "POST",
-      data: { comment_value: commentText, user_id: userId, movie_id: movieId },
+      data: { comment_value: commentText, user_id: userId, movie_id: movieId }, 
     });
-
-    $.ajax({
-      url: page_link + "/include/commentUpdate.php",
-      success: function (data) {
-        $("#comment_list").html(data);
-      },
-      timeout: 100,
-    });
+		setTimeout (function(){
+		$.ajax({
+			url: page_link + "/include/commentUpdate.php",
+			success: function (data) {
+				$("#comment_list").html(data);
+			},
+		});
+	}, 1000);
   }
 });
+
+// search process
+
+$("#search__button").on('click', function(event) {
+  let page_link = window.location.origin;
+	let searchText = $("#search__input").val();
+	if(searchText != "" && searchText != undefined) {
+		$.ajax({
+			url: page_link + "/pages/movie.php",
+			method: "POST",
+			data: {search__text: searchText},
+			success: function (data) {
+        $("body").html(data);
+      }
+		})
+	}
+})

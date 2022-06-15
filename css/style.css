@@ -60,7 +60,6 @@ header {
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  cursor: pointer;
 }
 
 .search input {
@@ -405,6 +404,11 @@ header {
   width: 24px;
   padding-right: 7px;
   background: url(../image/arrow-back.svg);
+}
+
+#search__button {
+  cursor: pointer;
+  z-index: 1;
 }
 
 /* COMMENT*/

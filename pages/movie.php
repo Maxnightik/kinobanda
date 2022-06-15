@@ -2,9 +2,14 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
-    $filter = $_POST['filter'];
-    $str = '';
+	$str = '';
 
+	if(isset($_POST['search__text']) && $_POST['search__text'] != "") {
+		$str .= "movieName LIKE '%" . $_POST['search__text'] . "%'";
+	}
+
+	if(isset($_POST['filter'])) {
+    $filter = $_POST['filter'];
     for ($i = 0; $i < count($filter); $i++) {
         $strLenght = strlen($str);
         if ($filter[$i]['name'] == 'type' && $filter[$i]['value'] != '') {
@@ -54,6 +59,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
+	}
 }
 ?>
 
