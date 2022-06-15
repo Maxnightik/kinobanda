@@ -11,20 +11,21 @@ if (
 
     $sql = "INSERT INTO users (nickname, email, userName, surname, password) VALUES
 ('"
-        . $_POST["nickname"] . "', '"
-        . $_POST["email"] . "', '"
-        . $_POST["userName"] . "', '"
-        . $_POST["surname"] . "', '"
-        . $_POST["password"] . "')";
+
+. $_POST["nickname"] . "', '"
+. $_POST["email"] . "', '"
+. $_POST["userName"] . "', '"
+. $_POST["surname"] . "', '"
+. $_POST["password"] . "')";
 
 
-    if (mysqli_query($connect, $sql)) {
-        echo "<h2>Користувача додано</h2>";
-    } else {
-        echo "<h2>Помилка</h2>" . mysqli_error($connect);
-    }
+if(mysqli_query($connect,$sql)) {
+include $_SERVER['DOCUMENT_ROOT'] . '/include/loginProcess.php';
+} else {
+echo "<h2>Помилка</h2>" . mysqli_error($connect);
 }
 
+}
 
 ?>
 

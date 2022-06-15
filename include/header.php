@@ -1,5 +1,6 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/login.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/register.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/media.css">
+    <link rel="stylesheet" href="<?php $documentRoot ?>/css/mediamovie.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -23,6 +25,7 @@
 
                 <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></a>
                 </div>
+
                 <div class="search">
 									<input id="search__input" type="text" name="search" placeholder="Шукати">
 									<div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
