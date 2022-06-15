@@ -1,0 +1,120 @@
+/* Стилi для пошуку */
+
+.movie {
+  margin-top: 10px;
+  width: 1168px;
+  min-height: 430px;
+  background: #0d0d0d;
+  border: 1px solid #950740;
+  border-radius: 11px;
+}
+
+.movie img {
+  width: 200px;
+  height: 286px;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+
+.movie-title,
+.movie-title a {
+  padding-left: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #c3073f;
+  text-decoration: none;
+}
+
+.movie-title a {
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #fff;
+}
+
+.genre {
+  font-size: 28px;
+  color: #c3073f;
+}
+
+.year {
+  color: #c3073f;
+}
+
+.description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 44px;
+  color: #5a5a5a;
+  padding-left: 10px;
+}
+
+.description p {
+  padding: 0 10px;
+}
+
+.info-movies {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-movie {
+  margin-top: 10px;
+  width: 1160px;
+  max-height: 100%;
+  background: #0d0d0d;
+  border: 1px solid #950740;
+  border-radius: 11px;
+  text-align: center;
+}
+
+.image {
+  width: 250px;
+  height: 170px;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  margin-bottom: 40px;
+}
+
+.screen ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.screen li {
+  list-style: none;
+}
+
+.trailer {
+  width: 200px;
+  height: 100%;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#search__button {
+  cursor: pointer;
+  z-index: 1;
+}

@@ -1,4 +1,5 @@
 <?php
+// Пiдключення бази даних
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
@@ -39,7 +40,8 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             for ($i = 0; $i < count($movieFrame); $i++) {
                             ?>
 
-                                <li><img class="image" src="<?php echo $siteName . $movie['frame'] . '/' . $movieFrame[$i]; ?>"></li>
+                            <li><img class="image"
+                                    src="<?php echo $siteName . $movie['frame'] . '/' . $movieFrame[$i]; ?>"></li>
                             <?php } ?>
                         </ul>
                         <a class="trailer" href="<?php echo $movie['trailer'] ?>" target="_blank">Дивитись
@@ -50,8 +52,8 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="comment">
 
                         <!-- COMMENTS BLOCK FORM  -->
-												<h3>Залишити коментар</h3>
-														<?php if(isset($_COOKIE['user__id'])) { ?>
+                        <h3>Залишити коментар</h3>
+                        <?php if(isset($_COOKIE['user__id'])) { ?>
 
                         <form name="comment" action="comment.php" method="POST" id="comments">
                             <p>
@@ -66,19 +68,22 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             </p>
                         </form>
 
-												<?php } else { ?>
-													<p> Для того, щоб залишити коментар, увiйдiть у свій акаунт чи зареєструйтесь </p>
-													<form name="comment" action="comment.php" method="POST" id="comments" style="pointer-events: none;">
+                        <?php } else { ?>
+                        <p> Для того, щоб залишити коментар, увiйдiть у свій акаунт чи зареєструйтесь </p>
+                        <form name="comment" action="comment.php" method="POST" id="comments"
+                            style="pointer-events: none;">
                             <p>
-                                <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
-                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
+                                <textarea name="text_comment" cols="70" rows="6" id="comment-area"
+                                    placeholder="Що Ви думаєте про цей фільм?"></textarea>
+                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>"
+                                    id="user-id">
                                 <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
                             </p>
                             <p>
                                 <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
                             </p>
                         </form>
-													<?php } ?>
+                        <?php } ?>
 
 
 
