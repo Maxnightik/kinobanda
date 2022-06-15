@@ -1,21 +1,21 @@
-<?php 
+<?php
 
- include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
-if(
-isset($_POST["nickname"]) && isset($_POST["email"]) && isset($_POST["userName"]) && isset($_POST["surname"]) &&
-isset($_POST["password"])
-&& $_POST["nickname"] != "" && $_POST["email"] != "" && $_POST["userName"] != "" && $_POST["surname"] != "" &&
-$_POST["password"] !=""
-) {
+if (
+    isset($_POST["nickname"]) && isset($_POST["email"]) && isset($_POST["userName"]) && isset($_POST["surname"]) &&
+    isset($_POST["password"])
+    && $_POST["nickname"] != "" && $_POST["email"] != "" && $_POST["userName"] != "" && $_POST["surname"] != "" &&
+    $_POST["password"] != ""
+) 
 
-$sql = "INSERT INTO users (nickname, email, userName, surname, password) VALUES
+    $sql = "INSERT INTO users (nickname, email, userName, surname, password) VALUES
 ('"
-. $_POST["nickname"] . "', '"
-. $_POST["email"] . "', '"
-. $_POST["userName"] . "', '"
-. $_POST["surname"] . "', '"
-. $_POST["password"] . "')";
+        . $_POST["nickname"] . "', '"
+        . $_POST["email"] . "', '"
+        . $_POST["userName"] . "', '"
+        . $_POST["surname"] . "', '"
+        . $_POST["password"] . "')";
 
 
 if(mysqli_query($connect,$sql)) {
@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/loginProcess.php';
 } else {
 echo "<h2>Помилка</h2>" . mysqli_error($connect);
 }
-}
+
 
 
 ?>

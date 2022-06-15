@@ -1,6 +1,6 @@
 <?php
-include "header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/config/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php';
 
 $email = NULL;
 $pass = NULL;
@@ -33,5 +33,3 @@ if(isset($email) && isset($pass) ) {
 	setcookie("logError", "POST ERROR", time() + 3600, '/');
 	header("Location: " . $siteName . "pages/login.php");
 }
-
-?>

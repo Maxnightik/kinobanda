@@ -27,6 +27,11 @@
   .logo img {
     margin-top: 27px;
   }
+
+  .sign {
+    margin-top: 76px;
+    margin-left: -168px;
+  }
   .movie {
     max-width: 500px;
   }
