@@ -37,7 +37,7 @@ $(".filter-btn").on("click", function (event) {
     });
   }
 });
-
+// test com for merge
 //send comment form
 $("#comment-btn").on("click", function (event) {
   event.preventDefault();
