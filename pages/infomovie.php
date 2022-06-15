@@ -16,7 +16,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 ?>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-<main>
+<main class="info">
 
     <div class="container">
         <div class="info-movies">

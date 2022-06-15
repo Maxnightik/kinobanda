@@ -1,7 +1,11 @@
 @media screen and (max-width: 1024px) {
-  .container {
-    width: 768px;
-  }
+    .container {
+        width: 768px;
+    }
+
+    .info .container {
+        margin: 0 auto;
+    }
 
     .filter-top {
         margin-top: 250px;
@@ -22,62 +26,70 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    width: 480px;
-  }
+    .container {
+        width: 480px;
+    }
 
-  .filter-top {
-    margin-top: 0;
-  }
+    .filter-top {
+        margin-top: 0;
+    }
+
+    .screen ul {
+        display: none;
+    }
+
+    .comment-btn {
+        margin-left: 67%;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .container {
-    width: 460px;
-  }
+    .container {
+        width: 460px;
+    }
 
-  .filter-top {
-    margin-top: 325px;
-  }
+    .filter-top {
+        margin-top: 325px;
+    }
 
-  .filter-top img {
-    width: 120px;
-    height: 120px;
-  }
+    .filter-top img {
+        width: 120px;
+        height: 120px;
+    }
 
-  .filter-top h3 {
-    font-size: 30px;
-  }
+    .filter-top h3 {
+        font-size: 30px;
+    }
 
-  .filter-bottom {
-    width: 420px;
-    height: auto;
-  }
+    .filter-bottom {
+        width: 420px;
+        height: auto;
+    }
 
-  .filter-type label {
-    display: block;
-    margin-top: 10px;
-    padding: 0px 10px 0px 55px;
-  }
+    .filter-type label {
+        display: block;
+        margin-top: 10px;
+        padding: 0px 10px 0px 55px;
+    }
 
-  .filter-radio + label:before {
-    left: 15px;
-  }
+    .filter-radio+label:before {
+        left: 15px;
+    }
 
-  .filter-radio + label:after {
-    left: 19px;
-  }
+    .filter-radio+label:after {
+        left: 19px;
+    }
 
-  .filter-data {
-    margin-top: 100px;
-  }
+    .filter-data {
+        margin-top: 100px;
+    }
 
-  .filter-data input {
-    max-width: 150px;
-  }
+    .filter-data input {
+        max-width: 150px;
+    }
 
-  .filter-category__item {
-    padding: 5px 15px;
-    font-size: 14px;
-  }
+    .filter-category__item {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
 }
