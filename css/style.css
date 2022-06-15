@@ -55,7 +55,6 @@ header {
   justify-content: center;
   padding-top: 20px;
   padding-left: 192px;
-  cursor: pointer;
 }
 
 .search input {
@@ -378,6 +377,11 @@ header {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
+}
+
+#search__button {
+	cursor: pointer;
+	z-index: 1;
 }
 
 /* COMMENT*/

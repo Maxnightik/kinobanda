@@ -51,9 +51,10 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="comment">
 
                         <!-- COMMENTS BLOCK FORM  -->
-                        <form name="comment" action="comment.php" method="POST" id="comments">
-                            <h3>Залишити коментар</h3>
+												<h3>Залишити коментар</h3>
+														<?php if(isset($_COOKIE['user__id'])) { ?>
 
+                        <form name="comment" action="comment.php" method="POST" id="comments">
                             <p>
                                 <textarea name="text_comment" cols="70" rows="6" id="comment-area"
                                     placeholder="Що Ви думаєте про цей фільм?"></textarea>
@@ -66,52 +67,28 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             </p>
                         </form>
 
+												<?php } else { ?>
+													<p> Для того, щоб залишити коментар, увiйдiть у свій акаунт чи зареєструйтесь </p>
+													<form name="comment" action="comment.php" method="POST" id="comments" style="pointer-events: none;">
+                            <p>
+                                <textarea name="text_comment" cols="70" rows="6" id="comment-area"
+                                    placeholder="Що Ви думаєте про цей фільм?"></textarea>
+                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>"
+                                    id="user-id">
+                                <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
+                            </p>
+                            <p>
+                                <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
+                            </p>
+                        </form>
+													<?php } ?>
+
 
 
                         <!-- COMMENTS BLOCK DISPLAY -->
                         <div id="comment_list">
 
                             <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
-
-                        </div>
-
-
-                        <div class="comment">
-
-                            <form name="comment" action="comment.php" method="post">
-                                <h3>Залишити коментар</h3>
-
-                                <p>
-                                    <textarea name="text_comment" cols="70" rows="20"></textarea>
-                                </p>
-                                <p>
-                                    <button type="submit" class="comment-btn">Вiдправити</button>
-                                </p>
-                            </form>
-                            <div class="comments">
-                                <div class="name">Max</div>
-                                <div class="text_comment">
-                                    <p>Классний фiльм!</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="name">Max</div>
-                                <div class="text_comment">
-                                    <p>Классний фiльм!</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="name">Max</div>
-                                <div class="text_comment">
-                                    <p>Классний фiльм!</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="name">Max</div>
-                                <div class="text_comment">
-                                    <p>Классний фiльм!</p>
-                                </div>
-                            </div>
 
                         </div>
 

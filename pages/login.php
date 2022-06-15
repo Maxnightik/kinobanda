@@ -13,8 +13,8 @@ if(!isset($_COOKIE["logError"])) setcookie("logError", '', time() + 3600, '/');
     <div class="filter-bottom" id="login-area">
         <form action="<?php $documentRoot ?>/include/loginProcess.php" id="login-form" method="POST">
             <div class="filter-data">
-                <input type="text" name="emailAuth" placeholder="Адрес электронной почты">
-                <input type="password" name="passAuth" placeholder="Пароль">
+                <input type="text" name="emailAuth" placeholder="Введіть свій email">
+                <input type="password" name="passAuth" placeholder="Введіть свій пароль">
             </div>
             <button type="submit" class="filter-btn" id="login-button">Увійти</button>
         </form>

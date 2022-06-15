@@ -31,8 +31,10 @@ $siteName = "http://kinobanda.local:8080/";
                 </div>
                 <a class="sign" href="/pages/login.php">Увiйти</a>
                 <a class="rega" href="/pages/register.php">Реєстрація</a>
-                <div class="search"><input type="text" name="search" placeholder="Шукати"><img
-                        src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
+                <div class="search">
+									<input id="search__input" type="text" name="search" placeholder="Шукати">
+									<div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
+								</div>
 
             </div>
         </div>
