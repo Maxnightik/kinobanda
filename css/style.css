@@ -9,6 +9,34 @@ header {
   height: 100px;
 }
 
+.sign {
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+  background: #c3073f;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 5px;
+}
+
+.rega {
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+  background: #c3073f;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 5px;
+}
+
 .container {
   width: 1170px;
   height: 100%;
@@ -22,8 +50,38 @@ header {
   margin-bottom: 6px;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 192px;
+  cursor: pointer;
+}
+
+.search input {
+  padding: 10px 10px;
+  margin-right: 6px;
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.8) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
+  opacity: 0.5;
+  backdrop-filter: blur(60px);
+  border-radius: 7px;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  max-width: 187px;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #fff;
+}
+
 .search img {
-  float: right;
+  margin-right: 80px;
 }
 
 /*FILTER BLOCK*/
@@ -39,9 +97,11 @@ header {
   box-sizing: border-box;
   width: 479px;
   height: 497px;
-  background: linear-gradient(109.46deg,
-      rgba(201, 201, 201, 0.5) 1.57%,
-      rgba(196, 196, 196, 0.1) 100%);
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.5) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
   backdrop-filter: blur(60px);
   border-radius: 27px;
   padding: 1.25em;
@@ -76,13 +136,13 @@ header {
   margin: 10px 0 0 7px;
 }
 
-.filter-radio+label {
+.filter-radio + label {
   position: relative;
   padding: 0 10px 0 25px;
   cursor: pointer;
 }
 
-.filter-radio+label:before {
+.filter-radio + label:before {
   content: "";
   position: absolute;
   top: -3px;
@@ -94,7 +154,7 @@ header {
   background: #fff;
 }
 
-.filter-radio+label:after {
+.filter-radio + label:after {
   content: "";
   position: absolute;
   top: 1px;
@@ -108,11 +168,11 @@ header {
   transition: 0.2s;
 }
 
-.filter-radio:checked+label:after {
+.filter-radio:checked + label:after {
   opacity: 1;
 }
 
-.filter-radio:focus+label:before {
+.filter-radio:focus + label:before {
   box-shadow: 0 0 0 3px rgba(255, 19, 19, 0.885);
 }
 
@@ -129,12 +189,13 @@ header {
   max-height: 60px;
 }
 
-.filter-data input,
-.reg input {
+.filter-data input {
   padding: 10px 12px;
-  background: linear-gradient(109.46deg,
-      rgba(201, 201, 201, 0.8) 1.57%,
-      rgba(196, 196, 196, 0.1) 100%);
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.8) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
   opacity: 0.5;
   backdrop-filter: blur(60px);
   border-radius: 7px;
@@ -162,7 +223,7 @@ header {
 }
 
 .filter-category__item {
-  border: 2px solid #C3073F;
+  border: 2px solid #c3073f;
   border-radius: 20px;
   padding: 5px 20px;
   display: inline-block;
@@ -179,7 +240,7 @@ header {
 
 .filter-category__item.selected {
   border: 2px solid #5fc307;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .filter-btn {
@@ -195,7 +256,9 @@ header {
 }
 
 .filter-btn:hover,
-.trailer:hover {
+.trailer:hover,
+.sign:hover,
+.rega:hover {
   background: #ffffff;
   color: #c3073f;
   cursor: pointer;
@@ -234,6 +297,15 @@ header {
 
 .movie-title a:hover {
   color: #c3073f;
+  text-decoration: none;
+}
+
+.movie-title a {
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #fff;
 }
 
 .genre {
@@ -316,7 +388,7 @@ header {
 
 .comment h3 {
   margin-left: 30px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .comment form textarea {
@@ -331,22 +403,26 @@ header {
 .comment form textarea::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .comment form textarea::-webkit-scrollbar {
   width: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .comment form textarea::-webkit-scrollbar-thumb {
   background-color: #c3073f;
   border-radius: 50px;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%,
-      color-stop(.5, rgba(255, 255, 255, .2)),
-      color-stop(.5, transparent), to(transparent));
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    color-stop(0.5, rgba(255, 255, 255, 0.2)),
+    color-stop(0.5, transparent),
+    to(transparent)
+  );
 }
-
 
 #comment-area:focus {
   box-shadow: 0 0 15px rgb(255, 19, 19, 1);
@@ -388,22 +464,4 @@ header {
 
 .text_comment {
   margin-left: 1em;
-}
-
-/* FOOTER */
-
-footer {
-  margin-top: 10px;
-}
-
-.footer-container {
-  width: 1168px;
-  height: 201px;
-  margin: 0 auto;
-  background: #0d0d0d;
-  border-radius: 24px;
-}
-
-.footer-container img {
-  padding: 50px 50px;
 }
