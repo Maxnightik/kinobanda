@@ -23,7 +23,6 @@
 
                 <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></a>
                 </div>
-
                 <div class="search">
 									<input id="search__input" type="text" name="search" placeholder="Шукати">
 									<div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
