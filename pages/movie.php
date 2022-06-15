@@ -7,26 +7,29 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
 
     for ($i = 0; $i < count($filter); $i++) {
         $strLenght = strlen($str);
-
         if ($filter[$i]['name'] == 'type' && $filter[$i]['value'] != '') {
             if ($strLenght > 0) {
-                $str .= " && ";
+                $str .= " AND ";
             }
             $str .= "characterId = " . $filter[$i]['value'];
         }
 
         if ($filter[$i]['name'] == 'year-from' && $filter[$i]['value'] != '') {
-            if ($strLenght > 0) {
-                $str .= " && ";
+            if (is_numeric($filter[$i]['value'])) {
+                if ($strLenght > 0) {
+                    $str .= " AND ";
+                }
+                $str .= "(year >= " . $filter[$i]['value'] . ")";
             }
-            $str .= "year >= " . $filter[$i]['value'];
         }
 
         if ($filter[$i]['name'] == 'year-to' && $filter[$i]['value'] != '') {
-            if ($strLenght > 0) {
-                $str .= " && ";
+            if (is_numeric($filter[$i]['value'])) {
+                if ($strLenght > 0) {
+                    $str .= " AND ";
+                }
+                $str .= "(year <= " . $filter[$i]['value'] . ")";
             }
-            $str .= "year <= " . $filter[$i]['value'];
         }
 
         if ($filter[$i]['categories']) {
@@ -34,13 +37,16 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
             for ($j = 0; $j < count($filter[$i]['categories']); $j++) {
                 if (count($filter[$i]['categories']) > 1) {
                     if ($j == 0) {
-                        $str .= " && categoryId = " . $filter[$i]['categories'][$j];
+                        $str .= " AND (categoryId = " . $filter[$i]['categories'][$j];
                     } else {
-                        $str .= " || categoryId = " . $filter[$i]['categories'][$j];
+                        $str .= " OR categoryId = " . $filter[$i]['categories'][$j];
+                    }
+                    if ($j == count($filter[$i]['categories']) - 1) {
+                        $str .= ")";
                     }
                 } else {
                     if ($strLenght > 0) {
-                        $str .= " && ";
+                        $str .= " AND ";
                     }
 
                     $str .= " categoryId = " . $filter[$i]['categories'][$j];
@@ -92,7 +98,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 ?>
                 <h2 class="error">На жаль фільм не знайдено, спробуйте знову</h2>
-                <a href="/">Повернутись назад</a>
+                <div><a href="<?php echo $siteName; ?>" class="back"><span></span> Повернутись назад</a></div>
             <?php
 
             }

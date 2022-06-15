@@ -381,6 +381,32 @@ header {
   font-weight: 600;
 }
 
+.error {
+  color: #c3073f;
+}
+
+.back {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: #c3073f;
+}
+
+.back:hover span {
+  background: url(../image/arrow-back-red.svg);
+}
+
+.back span {
+  height: 24px;
+  width: 24px;
+  padding-right: 7px;
+  background: url(../image/arrow-back.svg);
+}
+
 /* COMMENT*/
 
 .comment {

@@ -49,22 +49,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <!-- COMMENTS BLOCK  -->
                     <div class="comment">
 
-                        <!-- COMMENTS BLOCK FORM  -->
-                        <form name="comment" action="comment.php" method="POST" id="comments">
-                            <h3>Залишити коментар</h3>
-
-                            <p>
-                                <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
-                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
-                                <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
-                            </p>
-                            <p>
-                                <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
-                            </p>
-                        </form>
-
-
-
                         <!-- COMMENTS BLOCK DISPLAY -->
                         <div id="comment_list">
 
@@ -79,7 +63,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                                 <h3>Залишити коментар</h3>
 
                                 <p>
-                                    <textarea name="text_comment" cols="70" rows="20"></textarea>
+                                    <textarea name="text_comment" cols="70" rows="20" id="comment-area"></textarea>
                                 </p>
                                 <p>
                                     <button type="submit" class="comment-btn">Вiдправити</button>
@@ -119,16 +103,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
         </div>
     </div>
 </main>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="logo">
-            <img src="../image/logo.png" alt="logo" />
-        </div>
-    </div>
-</footer>
-
-<!-- END FOOTER -->
 </body>
 
 <script src="<?php echo ($siteName) ?>script/script.js"></script>
