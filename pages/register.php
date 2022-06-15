@@ -19,7 +19,7 @@ $sql = "INSERT INTO users (nickname, email, userName, surname, password) VALUES
 
 
 if(mysqli_query($connect,$sql)) {
-echo "<h2>Користувача додано</h2>";
+include $_SERVER['DOCUMENT_ROOT'] . '/include/loginProcess.php';
 } else {
 echo "<h2>Помилка</h2>" . mysqli_error($connect);
 }

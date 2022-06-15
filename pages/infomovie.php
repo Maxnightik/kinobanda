@@ -122,16 +122,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
         </div>
     </div>
 </main>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="logo">
-            <img src="../image/logo.png" alt="logo" />
-        </div>
-    </div>
-</footer>
 
-<!-- END FOOTER -->
 </body>
 
 <script src="<?php echo ($siteName) ?>script/script.js"></script>
