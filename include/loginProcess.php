@@ -1,6 +1,6 @@
 <?php
-include "header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/config/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php';
 
 if(isset($_POST["emailAuth"]) && isset($_POST["passAuth"]) ) {
 	$sql = "SELECT * FROM `users` WHERE `email` LIKE '" . $_POST["emailAuth"] . "' AND `password` LIKE '" . $_POST["passAuth"] . "'";
@@ -22,5 +22,3 @@ if(isset($_POST["emailAuth"]) && isset($_POST["passAuth"]) ) {
 	setcookie("logError", "POST ERROR", time() + 3600, '/');
 	header("Location: " . $siteName . "pages/login.php");
 }
-
-?>

@@ -5,6 +5,9 @@ $siteName = "http://kinobanda.local:8080/";
 
 ?>
 
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,16 +29,25 @@ $siteName = "http://kinobanda.local:8080/";
         <div class="header-top">
             <div class="container">
 
-                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png"
-                            alt="logo" /></a>
+                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></a>
                 </div>
-                <a class="sign" href="/pages/login.php">Увiйти</a>
-                <a class="rega" href="/pages/register.php">Реєстрація</a>
                 <div class="search">
 									<input id="search__input" type="text" name="search" placeholder="Шукати">
 									<div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
 								</div>
 
+                <?php if (isset($_COOKIE['user__id'])) { ?>
+                    <div>
+                        <a class="sign" href="<?php echo $siteName . 'include/exit.php' ?>">Вихід</a>
+                    </div>
+
+                <?php } else { ?>
+                    <div>
+                        <a class="sign" href="/pages/login.php">Увiйти</a>
+                        <a class="rega" href="/pages/register.php">Реєстрація</a>
+                    </div>
+
+                <?php } ?>
             </div>
         </div>
     </header>

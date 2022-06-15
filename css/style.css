@@ -43,6 +43,12 @@ header {
   margin: 0 auto;
 }
 
+.header-top .container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
 .logo img {
   width: 178px;
   height: 75px;
@@ -60,11 +66,9 @@ header {
 .search input {
   padding: 10px 10px;
   margin-right: 6px;
-  background: linear-gradient(
-    109.46deg,
-    rgba(201, 201, 201, 0.8) 1.57%,
-    rgba(196, 196, 196, 0.1) 100%
-  );
+  background: linear-gradient(109.46deg,
+      rgba(201, 201, 201, 0.8) 1.57%,
+      rgba(196, 196, 196, 0.1) 100%);
   opacity: 0.5;
   backdrop-filter: blur(60px);
   border-radius: 7px;
@@ -73,6 +77,7 @@ header {
   font-size: 15px;
   max-width: 187px;
   outline: none;
+  max-height: 20px;
 }
 
 .search input::placeholder {
@@ -80,7 +85,8 @@ header {
 }
 
 .search img {
-  margin-right: 80px;
+  height: 37px;
+  width: 31px;
 }
 
 /*FILTER BLOCK*/
@@ -96,11 +102,9 @@ header {
   box-sizing: border-box;
   width: 479px;
   height: 497px;
-  background: linear-gradient(
-    109.46deg,
-    rgba(201, 201, 201, 0.5) 1.57%,
-    rgba(196, 196, 196, 0.1) 100%
-  );
+  background: linear-gradient(109.46deg,
+      rgba(201, 201, 201, 0.5) 1.57%,
+      rgba(196, 196, 196, 0.1) 100%);
   backdrop-filter: blur(60px);
   border-radius: 27px;
   padding: 1.25em;
@@ -135,13 +139,13 @@ header {
   margin: 10px 0 0 7px;
 }
 
-.filter-radio + label {
+.filter-radio+label {
   position: relative;
   padding: 0 10px 0 25px;
   cursor: pointer;
 }
 
-.filter-radio + label:before {
+.filter-radio+label:before {
   content: "";
   position: absolute;
   top: -3px;
@@ -153,7 +157,7 @@ header {
   background: #fff;
 }
 
-.filter-radio + label:after {
+.filter-radio+label:after {
   content: "";
   position: absolute;
   top: 1px;
@@ -167,11 +171,11 @@ header {
   transition: 0.2s;
 }
 
-.filter-radio:checked + label:after {
+.filter-radio:checked+label:after {
   opacity: 1;
 }
 
-.filter-radio:focus + label:before {
+.filter-radio:focus+label:before {
   box-shadow: 0 0 0 3px rgba(255, 19, 19, 0.885);
 }
 
@@ -190,11 +194,9 @@ header {
 
 .filter-data input {
   padding: 10px 12px;
-  background: linear-gradient(
-    109.46deg,
-    rgba(201, 201, 201, 0.8) 1.57%,
-    rgba(196, 196, 196, 0.1) 100%
-  );
+  background: linear-gradient(109.46deg,
+      rgba(201, 201, 201, 0.8) 1.57%,
+      rgba(196, 196, 196, 0.1) 100%);
   opacity: 0.5;
   backdrop-filter: blur(60px);
   border-radius: 7px;
@@ -418,14 +420,12 @@ header {
 .comment form textarea::-webkit-scrollbar-thumb {
   background-color: #c3073f;
   border-radius: 50px;
-  background-image: -webkit-gradient(
-    linear,
-    0 0,
-    0 100%,
-    color-stop(0.5, rgba(255, 255, 255, 0.2)),
-    color-stop(0.5, transparent),
-    to(transparent)
-  );
+  background-image: -webkit-gradient(linear,
+      0 0,
+      0 100%,
+      color-stop(0.5, rgba(255, 255, 255, 0.2)),
+      color-stop(0.5, transparent),
+      to(transparent));
 }
 
 #comment-area:focus {
