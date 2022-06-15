@@ -30,10 +30,26 @@ $siteName = "http://kinobanda/";
                 <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png"
                             alt="logo" /></a>
                 </div>
-                <a class="sign" href="/pages/login.php">Увiйти</a>
+
                 <a class="rega" href="/pages/register.php">Реєстрація</a>
-                <div class="search"><input type="text" name="search" placeholder="Шукати"><img
-                        src="<?php $documentRoot ?>/image/search.svg" alt="search" /></div>
+                <?php 
+              
+                if(isset($_COOKIE["user__id"]) ) {
+                    ?>
+                <a class="sign" href="/include/exit.php">Вийти</a>
+
+                <?php 
+                    } else {
+                ?>
+                <a class="sign" href="/pages/login.php">Увiйти</a>
+                <?php
+                    }
+                    ?>
+
+
+                <div class="search"><input type="text" name="search" placeholder="Шукати">
+                    <img src="<?php $documentRoot ?>/image/search.svg" alt="search" />
+                </div>
 
             </div>
         </div>

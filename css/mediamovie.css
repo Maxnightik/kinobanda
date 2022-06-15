@@ -24,6 +24,9 @@
     margin-bottom: 38px;
   }
 
+  .logo img {
+    margin-top: 27px;
+  }
   .movie {
     max-width: 500px;
   }
