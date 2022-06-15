@@ -113,16 +113,4 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </main>
-
 <!-- END MAIN -->
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="logo">
-            <img src="image/logo.png" alt="logo" />
-        </div>
-    </div>
-</footer>
-
-<!-- END FOOTER -->
