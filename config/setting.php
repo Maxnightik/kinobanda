@@ -1,4 +1,6 @@
 <?php
 
-$documentRoot = "/opt/lampp/htdocs/films";
-$siteName = "http://films.local/";
+$documentRoot = "/opt/lampp/htdocs/kinobanda/kinobanda";
+$siteName = "http://kinobanda.local:8080/";
+
+?>

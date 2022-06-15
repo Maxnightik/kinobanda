@@ -1,4 +1,5 @@
- <?php
+<?php
+
     include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
     ?> <main class="main-filter">
