@@ -29,8 +29,7 @@
   }
 
   .sign {
-    margin-top: 76px;
-    margin-right: 358px;
+    margin-top: 20px;
   }
 
   .rega {
@@ -40,6 +39,10 @@
   .movie {
     max-width: 500px;
   }
+
+	.header-top .container {
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 480px) {

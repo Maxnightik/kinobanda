@@ -56,7 +56,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="comment">
 
                         <!-- Форма комментарiв  -->
-                        <h3>Залишити коментар</h3>
+                        <h3 class="unselectable">Залишити коментар</h3>
                         <?php if (isset($_COOKIE['user__id'])) { ?>
 
                             <form name="comment" action="comment.php" method="POST" id="comments">
@@ -100,6 +100,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 </main>
 </body>
 
-<script src="<?php echo ($siteName) ?>script/script.js"></script>
+<script src="<?php echo($siteName); ?>script/script.js"></script>
 
 </html>

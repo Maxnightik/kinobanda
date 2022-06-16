@@ -9,29 +9,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
         <p>Знайди фільм на свій смак</p>
     </div>
 
-<<<<<<< HEAD
-    include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
-    ?> 
-		<main class="main-filter">
-    <div class="filter-top">
-        <img src="<?php echo $siteName . "image/filter/popcorn1.svg" ?>" alt="" class="filter-img">
-        <h1>KINOBANDA</h1>
-        <p>Знайди фільм на свій смак</p>
-    </div>
-
-    <div class="filter-bottom">
-        <form id="filter-form" method="POST">
-            <div class="filter-type">
-                <p>Характеристика фільму</p>
-                <?php
-                    $sql = "SELECT * FROM characteristic";
-                    $result = $connect->query($sql);
-                    $count_type = mysqli_num_rows($result);
-                    $i = 0;
-                    while ($i < $count_type) {
-                        $type = mysqli_fetch_assoc($result);
-=======
     <div class="filter-bottom">
         <form id="filter-form" method="POST">
             <div class="filter-type">
@@ -47,7 +24,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
                 ?>
                     <input type="radio" name="type" id="<?php echo "type" . $type['characterId'] ?>" class="filter-radio" value="<?php echo $type['characterId'] ?>">
                     <label for="<?php echo "type" . $type['characterId'] ?>"><?php echo $type['characterName'] ?></label>
->>>>>>> fd60ff45021707d01f0039762dec61abfd918769
 
                 <?php
                     $i++;

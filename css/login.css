@@ -21,3 +21,6 @@
 #login-area p {
   text-align: center;
 }
+#login-area {
+	height: 380px;
+}
