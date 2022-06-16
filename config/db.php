@@ -1,5 +1,5 @@
 <?php
-
+// налаштування бази данних
 $servername = "localhost";
 $username = "root";
 $password = "";

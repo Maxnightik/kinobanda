@@ -1,4 +1,5 @@
 <?php
+// Пiдключення бази даних
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,14 +56,14 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 ?>
-
+<!-- пiдключення шапки сайту -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
 ?>
 <!-- MAIN -->
 <main>
     <div class="container">
         <div class="movies">
-
+            <!-- Вивiд списку фiльмiв -->
             <?php
             $sql = "SELECT * FROM movies WHERE " . $str;
             $result = $connect->query($sql);
