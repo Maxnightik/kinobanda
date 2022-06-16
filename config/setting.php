@@ -1,4 +1,4 @@
 <?php
 // налаштунки сайту 
-$documentRoot = "/opt/lampp/htdocs/films";
-$siteName = "http://films.local/";
+$documentRoot = "C:/xampp2/htdocs/kinobanda";
+$siteName = "http://kinobanda/";

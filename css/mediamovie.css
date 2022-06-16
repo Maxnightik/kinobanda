@@ -16,6 +16,9 @@
   .movie {
     max-width: 768px;
   }
+  .info-movie {
+    max-width: 768px;
+  }
 }
 
 @media screen and (max-width: 786px) {
@@ -49,9 +52,13 @@
     max-width: 500px;
   }
 
-	.header-top .container {
-		width: 100%;
-	}
+  .info-movie {
+    max-width: 500px;
+  }
+
+  .header-top .container {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -68,13 +75,16 @@
   }
 }
 
-
 @media screen and (max-width: 480px) {
   .container {
     max-width: 460px;
   }
 
   .movie {
+    max-width: 460px;
+  }
+
+  .info-movie {
     max-width: 460px;
   }
 }
