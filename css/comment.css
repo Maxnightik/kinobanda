@@ -32,14 +32,12 @@
 .comment form textarea::-webkit-scrollbar-thumb {
   background-color: #c3073f;
   border-radius: 50px;
-  background-image: -webkit-gradient(
-    linear,
-    0 0,
-    0 100%,
-    color-stop(0.5, rgba(255, 255, 255, 0.2)),
-    color-stop(0.5, transparent),
-    to(transparent)
-  );
+  background-image: -webkit-gradient(linear,
+      0 0,
+      0 100%,
+      color-stop(0.5, rgba(255, 255, 255, 0.2)),
+      color-stop(0.5, transparent),
+      to(transparent));
 }
 
 #comment-area:focus {
@@ -68,18 +66,33 @@
   cursor: pointer;
 }
 
+#comment_list {
+  margin-left: 30px;
+  margin-right: 16px;
+}
+
+#comment_list h4 {
+  color: #ffffff;
+}
+
 .comments {
-  border: #4a4a4a;
-  border-style: solid;
-  border-width: 0.25em;
   margin-bottom: 0.25em;
-  width: 98%;
+  width: 100%;
 }
 
 .name {
   margin-left: 1em;
+  color: #c3073f;
 }
 
 .text_comment {
-  margin-left: 1em;
+  margin: 0 2em;
+  background: rgb(74 68 68 / 17%);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.text_comment p {
+  margin: 0;
+  font-size: 20px;
 }

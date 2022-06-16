@@ -7,15 +7,26 @@ if (isset($movie['movieId'])) {
 include $_SERVER['DOCUMENT_ROOT'] . "/config/db.php";
 $sqlComm = "SELECT comments.*, users.nickname AS nick FROM comments RIGHT JOIN users ON comments.userId = users.userId AND comments.movieId=" . $id;
 $resultComm = $connect->query($sqlComm);
+$countComm = mysqli_num_rows($resultComm);
 
-while ($row = $resultComm->fetch_assoc()) { ?>
-	<div class="comments">
-		<div class="name"><?php echo ($row['nick']); ?></div>
-		<div class="text_comment">
-			<p><?php echo ($row['text']); ?></p>
+if ($countComm > 0) {
+?>
+
+	<h4> <?php echo $countComm; ?> коментарів</h4>
+	<?php
+	while ($row = $resultComm->fetch_assoc()) { ?>
+		<div class="comments">
+			<div class="name"><?php echo ($row['nick']); ?></div>
+			<div class="text_comment">
+				<p><?php echo ($row['text']); ?></p>
+			</div>
 		</div>
-	</div>
+	<?php
+	}
+} else {
+	?>
+	<h4> 0 коментарів</h4>
+	<p>Будьте першим хто залишить коментар</p>
 <?php
 }
-
 ?>
