@@ -8,7 +8,7 @@ $(".filter-category__item").on("click", function () {
 
 //send filter form
 $(".filter-btn").on("click", function (event) {
-  //cancel reboot
+	$("main").removeClass('main-filter');
   event.preventDefault();
   //array for category filtering
   let categories = [];
@@ -45,8 +45,7 @@ $(".filter-btn").on("click", function (event) {
       data: { filter: data },
       //when to get a successful answer
       success: function (data) {
-        //replaced the content of the page
-        $("body").html(data);
+        $("main").html(data);
       },
     });
   }
@@ -59,6 +58,7 @@ $("#comment-btn").on("click", function (event) {
   let commentText = $("#comment-area").val();
   let userId = $("#user-id").val();
   let movieId = $("#movie-id").val();
+	$("#comment-area").val('');
 
   if (userId > 0 && commentText != "" && movieId != "") {
     $.ajax({
@@ -67,12 +67,29 @@ $("#comment-btn").on("click", function (event) {
       data: { comment_value: commentText, user_id: userId, movie_id: movieId },
     });
 
-    $.ajax({
+  	setTimeout(() => $.ajax({
       url: page_link + "/include/commentUpdate.php",
       success: function (data) {
         $("#comment_list").html(data);
       },
-      timeout: 100,
-    });
+    }), 1000);
   }
 });
+
+// search process
+
+$("#search__button").on('click', function(event) {
+	$("main").removeClass('main-filter');
+  let page_link = window.location.origin;
+	let searchText = $("#search__input").val();
+	if(searchText != "" && searchText != undefined) {
+		$.ajax({
+			url: page_link + "/pages/movie.php",
+			method: "POST",
+			data: {search__text: searchText},
+			success: function (data) {
+        $("main").html(data);
+      }
+		})
+	}
+})

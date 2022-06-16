@@ -8,7 +8,7 @@
     }
 
     .filter-top {
-        margin-top: 250px;
+    /*    margin-top: 250px; */
     }
 
     .info-movie {
@@ -23,6 +23,11 @@
     .comment-btn {
         margin-left: 80%;
     }
+
+		#login-area {
+			height: 300px;
+			width: 400px;
+		}
 }
 
 @media screen and (max-width: 768px) {
@@ -41,6 +46,11 @@
     .comment-btn {
         margin-left: 67%;
     }
+
+		#login-area {
+			height: 250px;
+			width: 350px;
+		}
 }
 
 @media screen and (max-width: 480px) {
@@ -50,6 +60,7 @@
 
     .filter-top {
         margin-top: 325px;
+				margin-left: calc(380px - 50%);
     }
 
     .filter-top img {
@@ -64,6 +75,7 @@
     .filter-bottom {
         width: 420px;
         height: auto;
+				margin-left: calc(400px - 50%);
     }
 
     .filter-type label {
@@ -92,4 +104,14 @@
         padding: 5px 15px;
         font-size: 14px;
     }
+
+		#login-area {
+			height: 350px;
+			width: 320px;
+			margin-left: calc(400px - 50%);
+		}
+
+		#login-area .filter-data {
+			margin-top: 20px;
+		}
 }
