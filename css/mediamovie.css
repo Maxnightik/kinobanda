@@ -1,0 +1,53 @@
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 995px;
+    margin: 0;
+  }
+
+  .movie {
+    max-width: 995px;
+  }
+
+  .search {
+    padding-left: 78px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movie {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  header {
+    margin-bottom: 38px;
+  }
+
+  .logo img {
+    margin-top: 27px;
+  }
+
+  .sign {
+    margin-top: 76px;
+    margin-right: 358px;
+  }
+
+  .rega {
+    margin: 0;
+  }
+
+  .movie {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 460px;
+  }
+
+  .movie {
+    max-width: 460px;
+  }
+}

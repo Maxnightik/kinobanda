@@ -1,23 +1,28 @@
 <?php
+// Пiдключення бази даних
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
+//check if a request has been sent
 if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
+    //find the movie the user clicked on
     $sql = "SELECT * FROM movies WHERE movieId =" . $_GET['id'];
     $result = $connect->query($sql);
+    //get the found movie
     $movie = mysqli_fetch_assoc($result);
-
+    //find the category of the found movie
     $sqlCat = "SELECT * FROM category WHERE categoryId =" . $movie['categoryId'];
     $resultCat = $connect->query($sqlCat);
+    //get an array of category
     $category = mysqli_fetch_assoc($resultCat);
 
     setcookie("movie_id", $movie['movieId'], time() + 3600, '/');
 }
 
 ?>
-
+<!-- пiдключення шапки сайту -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-<main>
-
+<main class="info">
+    <!-- Вивiд повної  iнформацiї  про фiльм -->
     <div class="container">
         <div class="info-movies">
             <div class="info-movie">
@@ -34,8 +39,9 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="screen">
                         <ul>
                             <?php
+                            //create an array with the names of all the pictures in the movie
                             $movieFrame = array_diff(scandir($documentRoot . $movie['frame'], 1), array('..', '.'));
-
+                            //take turns displaying each picture
                             for ($i = 0; $i < count($movieFrame); $i++) {
                             ?>
 
@@ -46,49 +52,45 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             трейлер</a>
                     </div>
 
-                    <!-- COMMENTS BLOCK  -->
+                    <!-- Комментарi  -->
                     <div class="comment">
 
-                        <!-- COMMENTS BLOCK FORM  -->
-												<h3>Залишити коментар</h3>
-														<?php if(isset($_COOKIE['user__id'])) { ?>
+                        <!-- Форма комментарiв  -->
+                        <h3>Залишити коментар</h3>
+                        <?php if (isset($_COOKIE['user__id'])) { ?>
 
-                        <form name="comment" action="comment.php" method="POST" id="comments">
-                            <p>
-                                <textarea name="text_comment" cols="70" rows="6" id="comment-area"
-                                    placeholder="Що Ви думаєте про цей фільм?"></textarea>
-                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>"
-                                    id="user-id">
-                                <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
-                            </p>
-                            <p>
-                                <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
-                            </p>
-                        </form>
+                            <form name="comment" action="comment.php" method="POST" id="comments">
+                                <p>
+                                    <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
+                                    <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
+                                    <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
+                                </p>
+                                <p>
+                                    <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
+                                </p>
+                            </form>
 
-												<?php } else { ?>
-													<p> Для того, щоб залишити коментар, увiйдiть у свій акаунт чи зареєструйтесь </p>
-													<form name="comment" action="comment.php" method="POST" id="comments" style="pointer-events: none;">
-                            <p>
-                                <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
-                                <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
-                                <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
-                            </p>
-                            <p>
-                                <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
-                            </p>
-                        </form>
-													<?php } ?>
+                        <?php } else { ?>
+                            <p> Для того, щоб залишити коментар, увiйдiть у свій акаунт чи зареєструйтесь </p>
+                            <form name="comment" action="comment.php" method="POST" id="comments" style="pointer-events: none;">
+                                <p>
+                                    <textarea name="text_comment" cols="70" rows="6" id="comment-area" placeholder="Що Ви думаєте про цей фільм?"></textarea>
+                                    <input name="user_id" type="hidden" value="<?php echo ($_COOKIE['user__id']) ?>" id="user-id">
+                                    <input name="movie_id" type="hidden" value="<?php echo ($_GET['id']) ?>" id="movie-id">
+                                </p>
+                                <p>
+                                    <button type="submit" class="comment-btn" id="comment-btn">Вiдправити</button>
+                                </p>
+                            </form>
+                        <?php } ?>
 
-
-
-                        <!-- COMMENTS BLOCK DISPLAY -->
+                        <!-- Кiнец форми комментарiв  -->
                         <div id="comment_list">
 
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
+                            <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php";
+                            ?>
 
                         </div>
-
                     </div>
 
                 </div>
@@ -96,16 +98,6 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
         </div>
     </div>
 </main>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="logo">
-            <img src="../image/logo.png" alt="logo" />
-        </div>
-    </div>
-</footer>
-
-<!-- END FOOTER -->
 </body>
 
 <script src="<?php echo ($siteName) ?>script/script.js"></script>
