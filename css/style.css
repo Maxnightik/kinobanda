@@ -1,14 +1,17 @@
+/* тiло документу */
 body {
   background: #1a1a1d;
   font-family: "Montserrat", sans-serif;
 }
 
+/* шапка сайту */
 header {
   margin: 10px 0;
   width: 100%;
   height: 100px;
 }
 
+/* Увiйти чи Вихiд */
 .sign {
   font-size: 22px;
   font-weight: 600;
@@ -23,6 +26,7 @@ header {
   padding: 5px 5px;
 }
 
+/* Зареєструватись */
 .rega {
   font-size: 22px;
   font-weight: 600;
@@ -36,7 +40,7 @@ header {
   color: #ffffff;
   padding: 5px 5px;
 }
-
+/* Контейнер */
 .container {
   width: 1170px;
   height: 100%;
@@ -47,20 +51,21 @@ header {
   display: flex;
   justify-content: space-between;
 }
-
+/* Логотип */
 .logo img {
   width: 178px;
   height: 75px;
   float: left;
   margin-bottom: 6px;
 }
-
+/* пошук */
 .search {
   display: flex;
   justify-content: center;
   padding-top: 20px;
 }
 
+/* поле пошуку */
 .search input {
   padding: 10px 10px;
   margin-right: 6px;
@@ -79,11 +84,11 @@ header {
   outline: none;
   max-height: 20px;
 }
-
+/* плейсхолдер поля пошуку */
 .search input::placeholder {
   color: #fff;
 }
-
+/* картинка лупи */
 .search img {
   height: 37px;
   width: 31px;

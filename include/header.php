@@ -1,4 +1,6 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
+<?php 
+// Пiдключення налаштувань
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinobanda</title>
+    <!-- пiдключення стилiв -->
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/style.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/filterBlock.css">
     <link rel="stylesheet" href="<?php $documentRoot ?>/css/search.css">
@@ -24,21 +27,22 @@
     <header>
         <div class="header-top">
             <div class="container">
-
+                <!-- Логотип -->
                 <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png"
                             alt="logo" /></a>
                 </div>
-
+                <!-- поле пошуку -->
                 <div class="search">
                     <input id="search__input" type="text" name="search" placeholder="Шукати">
                     <div id="search__button"><img src="<?php $documentRoot ?>/image/search.svg" alt="search" />
                     </div>
                 </div>
+                <!-- Якщо iснує кука - то iснує Вихід -->
                 <?php if (isset($_COOKIE['user__id'])) { ?>
                 <div>
                     <a class="sign" href="<?php echo $siteName . 'include/exit.php' ?>">Вихід</a>
                 </div>
-
+                <!-- Якщо нi - то показувати Увiйти та Реєстрація -->
                 <?php } else { ?>
                 <div>
                     <a class="sign" href="/pages/login.php">Увiйти</a>

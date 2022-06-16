@@ -15,10 +15,10 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 ?>
-
+<!-- пiдключення шапки сайту -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
 <main>
-
+    <!-- Вивiд повної  iнформацiї  про фiльм -->
     <div class="container">
         <div class="info-movies">
             <div class="info-movie">
@@ -48,10 +48,10 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                             трейлер</a>
                     </div>
 
-                    <!-- COMMENTS BLOCK  -->
+                    <!-- Комментарi  -->
                     <div class="comment">
 
-                        <!-- COMMENTS BLOCK FORM  -->
+                        <!-- Форма комментарiв  -->
                         <h3>Залишити коментар</h3>
                         <?php if(isset($_COOKIE['user__id'])) { ?>
 
@@ -87,7 +87,7 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
 
 
 
-                        <!-- COMMENTS BLOCK DISPLAY -->
+                        <!-- Кiнец форми комментарiв  -->
                         <div id="comment_list">
 
                             <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/commentUpdate.php"; ?>
