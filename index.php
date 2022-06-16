@@ -1,18 +1,20 @@
- <?php
+<?php
+
     include $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
-    ?> <main class="main-filter">
-     <div class="filter-top">
-         <img src="<?php echo $siteName . "image/filter/popcorn1.svg" ?>" alt="" class="filter-img">
-         <h1>KINOBANDA</h1>
-         <p>Знайди фільм на свій смак</p>
-     </div>
+    ?> 
+		<main class="main-filter">
+    <div class="filter-top">
+        <img src="<?php echo $siteName . "image/filter/popcorn1.svg" ?>" alt="" class="filter-img">
+        <h1>KINOBANDA</h1>
+        <p>Знайди фільм на свій смак</p>
+    </div>
 
-     <div class="filter-bottom">
-         <form id="filter-form" method="POST">
-             <div class="filter-type">
-                 <p>Характеристика фільму</p>
-                 <?php
+    <div class="filter-bottom">
+        <form id="filter-form" method="POST">
+            <div class="filter-type">
+                <p>Характеристика фільму</p>
+                <?php
                     $sql = "SELECT * FROM characteristic";
                     $result = $connect->query($sql);
                     $count_type = mysqli_num_rows($result);
