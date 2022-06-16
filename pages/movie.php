@@ -1,4 +1,5 @@
 <?php
+// Пiдключення бази даних
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -62,14 +63,14 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
+<!-- пiдключення шапки сайту -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
 ?>
 <!-- MAIN -->
 <main>
     <div class="container">
         <div class="movies">
-
+            <!-- Вивiд списку фiльмiв -->
             <?php
             $sql = "SELECT * FROM movies WHERE " . $str;
             $result = $connect->query($sql);
@@ -83,22 +84,22 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
                     $category = mysqli_fetch_assoc($resultCat);
             ?>
 
-                    <div class="movie">
-                        <h2 class="movie-title">
-                            <a href="<?php echo $siteName . "pages/infomovie.php?id=" . $movie['movieId'] ?>" target="_blank">
-                                <?php echo $movie['movieName']; ?>
-                                (<?php echo $movie['year']; ?>) </a>
-                        </h2>
-                        <img src="<?php echo $siteName . $movie['movieImg']; ?>" alt="постер" />
-                        <div class="description">
-                            <div class="genre"><?php echo $category['categoryName']; ?></div>
-                            <p>
-                                <?php echo $movie['description']; ?>
-                            </p>
-                        </div>
-                    </div>
+            <div class="movie">
+                <h2 class="movie-title">
+                    <a href="<?php echo $siteName . "pages/infomovie.php?id=" . $movie['movieId'] ?>" target="_blank">
+                        <?php echo $movie['movieName']; ?>
+                        (<?php echo $movie['year']; ?>) </a>
+                </h2>
+                <img src="<?php echo $siteName . $movie['movieImg']; ?>" alt="постер" />
+                <div class="description">
+                    <div class="genre"><?php echo $category['categoryName']; ?></div>
+                    <p>
+                        <?php echo $movie['description']; ?>
+                    </p>
+                </div>
+            </div>
 
-                <?php
+            <?php
                     $n++;
                 }
             } else {
