@@ -1,7 +1,6 @@
 @media screen and (max-width: 1200px) {
   .container {
     max-width: 995px;
-    margin: 0;
   }
 
   .movie {
@@ -24,23 +23,47 @@
     margin-bottom: 38px;
   }
 
+  .header-top .container {
+    width: 580px;
+  }
+
   .logo img {
-    margin-top: 27px;
+    margin-top: 12px;
   }
 
-  .sign {
-    margin-top: 76px;
-    margin-right: 358px;
+  .link {
+    max-width: 200px;
   }
 
+  .sign,
   .rega {
-    margin: 0;
+    font-size: 14px;
+  }
+
+  .logo img {
+    width: 120px;
+    height: 55px;
   }
 
   .movie {
     max-width: 500px;
   }
 }
+
+@media screen and (max-width: 580px) {
+  .header-top .container {
+    width: 480px;
+  }
+
+  .search {
+    padding-left: 40px;
+  }
+
+  #search__input {
+    max-width: 127px;
+  }
+}
+
 
 @media screen and (max-width: 480px) {
   .container {
