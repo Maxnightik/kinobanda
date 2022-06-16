@@ -2,13 +2,17 @@
 // Пiдключення бази даних
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
+//check if a request has been sent
 if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
+    //find the movie the user clicked on
     $sql = "SELECT * FROM movies WHERE movieId =" . $_GET['id'];
     $result = $connect->query($sql);
+    //get the found movie
     $movie = mysqli_fetch_assoc($result);
-
+    //find the category of the found movie
     $sqlCat = "SELECT * FROM category WHERE categoryId =" . $movie['categoryId'];
     $resultCat = $connect->query($sqlCat);
+    //get an array of category
     $category = mysqli_fetch_assoc($resultCat);
 
     setcookie("movie_id", $movie['movieId'], time() + 3600, '/');
@@ -35,8 +39,9 @@ if (isset($_GET) and $_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="screen">
                         <ul>
                             <?php
+                            //create an array with the names of all the pictures in the movie
                             $movieFrame = array_diff(scandir($documentRoot . $movie['frame'], 1), array('..', '.'));
-
+                            //take turns displaying each picture
                             for ($i = 0; $i < count($movieFrame); $i++) {
                             ?>
 
