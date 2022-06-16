@@ -43,7 +43,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
                     </div>
                     <!-- Якщо нi - то показувати Увiйти та Реєстрація -->
                 <?php } else { ?>
-                    <div>
+                    <div class="link">
                         <a class="sign" href="/pages/login.php">Увiйти</a>
                         <a class="rega" href="/pages/register.php">Реєстрація</a>
                     </div>

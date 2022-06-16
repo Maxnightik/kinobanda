@@ -1,5 +1,4 @@
 <?php
-
-$documentRoot = "G:/Projects/html/HappyMoments/courses project/test/";
-$siteName = "http://kinobanda.local/";
-?>
+// налаштунки сайту 
+$documentRoot = "/opt/lampp/htdocs/films";
+$siteName = "http://films.local/";
