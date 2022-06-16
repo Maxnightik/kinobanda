@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Пiдключення налаштувань
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
 
@@ -28,8 +28,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
         <div class="header-top">
             <div class="container">
                 <!-- Логотип -->
-                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png"
-                            alt="logo" /></a>
+                <div class="logo"><a href="../index.php"><img src="<?php $documentRoot ?>/image/logo.png" alt="logo" /></a>
                 </div>
                 <!-- поле пошуку -->
                 <div class="search">
@@ -39,15 +38,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php'; ?>
                 </div>
                 <!-- Якщо iснує кука - то iснує Вихід -->
                 <?php if (isset($_COOKIE['user__id'])) { ?>
-                <div>
-                    <a class="sign" href="<?php echo $siteName . 'include/exit.php' ?>">Вихід</a>
-                </div>
-                <!-- Якщо нi - то показувати Увiйти та Реєстрація -->
+                    <div>
+                        <a class="sign" href="<?php echo $siteName . 'include/exit.php' ?>">Вихід</a>
+                    </div>
+                    <!-- Якщо нi - то показувати Увiйти та Реєстрація -->
                 <?php } else { ?>
-                <div>
-                    <a class="sign" href="/pages/login.php">Увiйти</a>
-                    <a class="rega" href="/pages/register.php">Реєстрація</a>
-                </div>
+                    <div>
+                        <a class="sign" href="/pages/login.php">Увiйти</a>
+                        <a class="rega" href="/pages/register.php">Реєстрація</a>
+                    </div>
 
                 <?php } ?>
             </div>
