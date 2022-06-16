@@ -94,8 +94,8 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!-- пiдключення шапки сайту -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config/setting.php';
 ?>
 <!-- MAIN -->
 <main>
